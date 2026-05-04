@@ -11,11 +11,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  
+
   body {
     background: #0a1628;
     font-family: 'DM Sans', sans-serif;
@@ -29,45 +29,50 @@
 
   .container {
     max-width: 480px;
+    width: 100%;
   }
 
   .logo {
-    width: 100px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
-    margin-bottom: 24px;
+    margin: 0 auto 32px;
+    display: block;
+    border: 2px solid #e63000;
   }
 
-  .brand {
-    font-size: 36px;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 1px;
-  }
-
-  .brand span {
-    color: #e63000;
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: #e63000;
+    margin: 0 auto 28px;
+    border-radius: 2px;
   }
 
   .tagline {
     color: #c8a96e;
     font-size: 16px;
-    margin-top: 10px;
-    margin-bottom: 32px;
-    line-height: 1.6;
+    margin-bottom: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
   }
 
-  .divider {
-    width: 60px;
-    height: 2px;
-    background: #e63000;
-    margin: 0 auto 32px;
+  .markets {
+    color: #a0b0c8;
+    font-size: 14px;
+    margin-bottom: 36px;
+    letter-spacing: 1px;
   }
 
   .message {
-    color: #a0b0c8;
+    color: #6a7a8a;
     font-size: 15px;
     line-height: 1.7;
-    margin-bottom: 32px;
+    margin-bottom: 36px;
+    padding: 20px;
+    border: 1px solid #1a2a3a;
+    border-radius: 8px;
+    background: #0d1e30;
   }
 
   .btn {
@@ -75,53 +80,61 @@
     background: #e63000;
     color: #ffffff;
     text-decoration: none;
-    padding: 14px 32px;
+    padding: 16px 36px;
     border-radius: 6px;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.5px;
-    transition: background 0.2s;
+    transition: all 0.2s;
   }
 
   .btn:hover {
     background: #c8a96e;
     color: #0a1628;
+    transform: translateY(-2px);
   }
 
   .footer {
-    margin-top: 40px;
-    color: #3a4a5a;
+    margin-top: 48px;
+    color: #2a3a4a;
     font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .footer a {
+    color: #3a5a7a;
+    text-decoration: none;
   }
 </style>
 </head>
 <body>
   <div class="container">
-    <img src="android-chrome-192x192.png" 
-         alt="CallFlow™" class="logo">
-    
-    <div class="brand">
-      Call<span>Flow</span>™
-    </div>
+
+    <img src="android-chrome-512x512.png" 
+         alt="CallFlow™" 
+         class="logo">
 
     <div class="divider"></div>
 
-    <p class="tagline">
-      Digital Growth Audits for Local Businesses<br>
-      Canada · USA · UK · Australia
-    </p>
+    <p class="tagline">Digital Growth Audits for Local Businesses</p>
+    
+    <p class="markets">🇨🇦 Canada &nbsp;·&nbsp; 🇺🇸 USA &nbsp;·&nbsp; 🇬🇧 UK &nbsp;·&nbsp; 🇦🇺 Australia</p>
 
-    <p class="message">
+    <div class="message">
       If you received a private audit report link,<br>
-      please use the link provided to you directly.
-    </p>
+      please use the <strong style="color:#c8a96e">exact link</strong> provided to you.<br><br>
+      Each report is prepared exclusively<br>for one business only.
+    </div>
 
     <a href="https://alauddinbd71.github.io/CallFlow" 
        class="btn">Visit CallFlow™ Website →</a>
 
     <div class="footer">
-      © 2026 CallFlow™ · callflowmarketer@gmail.com
+      © 2026 CallFlow™<br>
+      <a href="mailto:callflowmarketer@gmail.com">
+      callflowmarketer@gmail.com</a>
     </div>
+
   </div>
 </body>
 </html>
