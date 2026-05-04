@@ -3,44 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CallFlow™</title>
+<title>CallFlow™ | Digital Growth Audits</title>
 
-<!-- Favicons -->
-<link rel="icon" type="image/x-icon" href="/clients/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="/clients/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/clients/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/clients/apple-touch-icon.png">
-<link rel="manifest" href="/clients/site.webmanifest">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
   body {
     background: #0a1628;
-    color: #c8a96e;
-    font-family: sans-serif;
+    font-family: 'DM Sans', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    min-height: 100vh;
     text-align: center;
+    padding: 20px;
   }
-  a {
-    color: #c8a96e;
-    text-decoration: none;
+
+  .container {
+    max-width: 480px;
   }
-  a:hover {
+
+  .logo {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 24px;
+  }
+
+  .brand {
+    font-size: 36px;
+    font-weight: 700;
     color: #ffffff;
+    letter-spacing: 1px;
+  }
+
+  .brand span {
+    color: #e63000;
+  }
+
+  .tagline {
+    color: #c8a96e;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #e63000;
+    margin: 0 auto 32px;
+  }
+
+  .message {
+    color: #a0b0c8;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .btn {
+    display: inline-block;
+    background: #e63000;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+  }
+
+  .btn:hover {
+    background: #c8a96e;
+    color: #0a1628;
+  }
+
+  .footer {
+    margin-top: 40px;
+    color: #3a4a5a;
+    font-size: 13px;
   }
 </style>
 </head>
 <body>
-  <div>
-    <img src="/clients/android-chrome-192x192.png" 
-         width="80" style="border-radius:50%; margin-bottom:20px;">
-    <h1 style="margin:0">CallFlow™</h1>
-    <p>Digital Growth Audits for Local Businesses</p>
-    <p><a href="https://alauddinbd71.github.io/CallFlow">
-    Visit our website →</a></p>
+  <div class="container">
+    <img src="android-chrome-192x192.png" 
+         alt="CallFlow™" class="logo">
+    
+    <div class="brand">
+      Call<span>Flow</span>™
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="tagline">
+      Digital Growth Audits for Local Businesses<br>
+      Canada · USA · UK · Australia
+    </p>
+
+    <p class="message">
+      If you received a private audit report link,<br>
+      please use the link provided to you directly.
+    </p>
+
+    <a href="https://alauddinbd71.github.io/CallFlow" 
+       class="btn">Visit CallFlow™ Website →</a>
+
+    <div class="footer">
+      © 2026 CallFlow™ · callflowmarketer@gmail.com
+    </div>
   </div>
 </body>
 </html>
