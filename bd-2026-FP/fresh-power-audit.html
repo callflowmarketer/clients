@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresh Power Engineering — Digital Growth Audit | CallFlow™</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #07111F;
+    --navy2: #0c1c30;
+    --orange: #F4511E;
+    --orange2: #ff6b3d;
+    --ice: #e8f4f8;
+    --mist: #f0f6fa;
+    --steel: #6b8ca8;
+    --red: #e53e3e;
+    --green: #22c55e;
+    --yellow: #f59e0b;
+    --white: #ffffff;
+    --text: #1a2e40;
+    --text2: #4a6070;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(7,17,31,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(244,81,30,0.2);
+    padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 10px;
+  }
+  .nav-brand { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; color: var(--orange); letter-spacing: 0.05em; }
+  .nav-links { display: flex; gap: 6px; flex-wrap: wrap; }
+  .nav-links a {
+    font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.6);
+    text-decoration: none; padding: 5px 10px; border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.2s;
+  }
+  .nav-links a:hover { color: #fff; border-color: var(--orange); background: rgba(244,81,30,0.1); }
+  .nav-cta {
+    background: var(--orange); color: #fff; font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 0.75rem; padding: 7px 14px; border-radius: 20px;
+    text-decoration: none; white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--orange2); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #07111F 0%, #0c1c30 50%, #071522 100%);
+    padding: 60px 24px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(244,81,30,0.15);
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(244,81,30,0.12) 0%, transparent 70%);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(244,81,30,0.15);
+    border: 1px solid rgba(244,81,30,0.3);
+    color: var(--orange);
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .hero-sub { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-bottom: 8px; position: relative; }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 7vw, 3.2rem);
+    font-weight: 800; line-height: 1.1;
+    color: #fff;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .hero h1 span { color: var(--orange); }
+  .hero-desc {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.9rem; max-width: 480px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+    position: relative;
+  }
+
+  /* ── SCORE PILLS ── */
+  .score-strip {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+    margin-bottom: 28px; position: relative;
+  }
+  .score-pill {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px; padding: 14px 20px;
+    text-align: center; min-width: 120px;
+  }
+  .score-pill .val {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.6rem; font-weight: 800;
+    line-height: 1;
+  }
+  .score-pill .val.red { color: var(--red); }
+  .score-pill .val.orange { color: var(--orange); }
+  .score-pill .val.yellow { color: var(--yellow); }
+  .score-pill .val.green { color: var(--green); }
+  .score-pill .lbl { font-size: 0.65rem; color: rgba(255,255,255,0.45); margin-top: 4px; letter-spacing: 0.05em; text-transform: uppercase; }
+
+  /* ── CTA BUTTONS ── */
+  .cta-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; position: relative; }
+  .btn-primary {
+    background: var(--orange); color: #fff;
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.85rem;
+    padding: 13px 24px; border-radius: 8px; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover { background: var(--orange2); transform: translateY(-1px); }
+  .btn-secondary {
+    background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.85);
+    font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.85rem;
+    padding: 13px 24px; border-radius: 8px; text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.14); }
+
+  /* ── SECTIONS ── */
+  section {
+    max-width: 780px; margin: 0 auto;
+    padding: 48px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .zone-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 6px;
+  }
+  .zone-label.step { opacity: 0.5; color: rgba(255,255,255,0.4); }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    font-weight: 800; line-height: 1.2;
+    margin-bottom: 16px;
+    color: #fff;
+  }
+  h2 em { font-style: normal; color: var(--orange); }
+
+  p { color: rgba(255,255,255,0.65); line-height: 1.7; font-size: 0.9rem; margin-bottom: 12px; }
+
+  /* ── SCORE CARD ── */
+  .score-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px; overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .score-card-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    flex-wrap: wrap; gap: 8px;
+  }
+  .score-card-header .pillar-name {
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; color: #fff;
+  }
+  .score-badge {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 1.1rem; padding: 4px 14px;
+    border-radius: 20px;
+  }
+  .score-badge.red { background: rgba(229,62,62,0.15); color: var(--red); border: 1px solid rgba(229,62,62,0.3); }
+  .score-badge.orange { background: rgba(244,81,30,0.15); color: var(--orange); border: 1px solid rgba(244,81,30,0.3); }
+  .score-badge.yellow { background: rgba(245,158,11,0.15); color: var(--yellow); border: 1px solid rgba(245,158,11,0.3); }
+  .score-badge.green { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
+  .score-card-body { padding: 16px 20px; }
+  .score-card-body p { margin-bottom: 0; font-size: 0.85rem; }
+
+  /* ── PROGRESS BAR ── */
+  .bar-wrap { height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; margin: 10px 0 12px; }
+  .bar-fill { height: 100%; border-radius: 3px; transition: width 1s ease; }
+  .bar-fill.red { background: var(--red); }
+  .bar-fill.orange { background: var(--orange); }
+  .bar-fill.yellow { background: var(--yellow); }
+
+  /* ── REVENUE LEAK BOX ── */
+  .revenue-box {
+    background: linear-gradient(135deg, rgba(229,62,62,0.12), rgba(244,81,30,0.08));
+    border: 1px solid rgba(229,62,62,0.3);
+    border-radius: 14px; padding: 28px 24px;
+    text-align: center; margin: 24px 0;
+  }
+  .revenue-box .big-num {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.4rem, 8vw, 3.8rem);
+    font-weight: 800; color: var(--red); line-height: 1;
+  }
+  .revenue-box .sub { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 6px; }
+  .calc-table { margin-top: 20px; font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 2; }
+  .calc-table span.num { color: rgba(255,255,255,0.8); font-weight: 600; }
+
+  /* ── BLEED POINTS ── */
+  .bleed-item {
+    background: rgba(229,62,62,0.06);
+    border-left: 3px solid var(--red);
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px; margin-bottom: 12px;
+  }
+  .bleed-item h4 {
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.9rem;
+    color: var(--red); margin-bottom: 6px;
+  }
+  .bleed-item p { font-size: 0.82rem; margin-bottom: 6px; }
+  .bleed-item .fix {
+    font-size: 0.78rem; color: var(--green);
+    font-weight: 600;
+  }
+
+  /* ── COMPETITOR TABLE ── */
+  .comp-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 20px;
+    margin-bottom: 12px;
+  }
+  .comp-card .comp-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 10px; flex-wrap: wrap; gap: 8px;
+  }
+  .comp-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; color: #fff; }
+  .comp-tag {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 3px 10px; border-radius: 20px;
+  }
+  .comp-tag.threat { background: rgba(229,62,62,0.15); color: var(--red); border: 1px solid rgba(229,62,62,0.25); }
+  .comp-tag.weak { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid rgba(34,197,94,0.25); }
+  .comp-stats { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
+  .comp-stat .s-val { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; color: #fff; }
+  .comp-stat .s-lbl { font-size: 0.65rem; color: rgba(255,255,255,0.4); }
+  .vuln-box {
+    background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.15);
+    border-radius: 8px; padding: 10px 14px;
+    font-size: 0.78rem; color: rgba(255,255,255,0.6); line-height: 1.5;
+  }
+  .vuln-box strong { color: var(--green); }
+
+  /* ── ROADMAP ── */
+  .roadmap-phase {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; overflow: hidden; margin-bottom: 12px;
+  }
+  .phase-header {
+    padding: 14px 20px;
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .phase-num {
+    width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  .phase-num.p1 { background: rgba(229,62,62,0.2); color: var(--red); }
+  .phase-num.p2 { background: rgba(244,81,30,0.2); color: var(--orange); }
+  .phase-num.p3 { background: rgba(34,197,94,0.2); color: var(--green); }
+  .phase-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.9rem; color: #fff; }
+  .phase-sub { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
+  .phase-items { padding: 16px 20px; }
+  .phase-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.82rem; color: rgba(255,255,255,0.65);
+  }
+  .phase-item:last-child { border-bottom: none; }
+  .phase-item .icon { font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+
+  /* ── PACKAGES ── */
+  .pkg-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width: 600px) { .pkg-grid { grid-template-columns: repeat(3, 1fr); } }
+  .pkg-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px; padding: 24px 20px;
+    position: relative;
+  }
+  .pkg-card.featured {
+    background: rgba(244,81,30,0.08);
+    border-color: rgba(244,81,30,0.35);
+  }
+  .pkg-badge {
+    position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+    background: var(--orange); color: #fff;
+    font-family: 'Syne', sans-serif; font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 12px; border-radius: 10px; white-space: nowrap;
+  }
+  .pkg-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; color: #fff; margin-bottom: 4px; }
+  .pkg-price { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.6rem; color: var(--orange); line-height: 1; margin-bottom: 4px; }
+  .pkg-price span { font-size: 0.7rem; color: rgba(255,255,255,0.4); font-weight: 400; }
+  .pkg-tagline { font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-bottom: 16px; }
+  .pkg-features { list-style: none; }
+  .pkg-features li { font-size: 0.78rem; color: rgba(255,255,255,0.6); padding: 5px 0; display: flex; gap: 8px; }
+  .pkg-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+  .pkg-cta {
+    display: block; text-align: center; margin-top: 18px;
+    background: rgba(244,81,30,0.12); color: var(--orange);
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.78rem;
+    padding: 10px; border-radius: 8px; text-decoration: none;
+    border: 1px solid rgba(244,81,30,0.25);
+    transition: all 0.2s;
+  }
+  .pkg-cta:hover { background: var(--orange); color: #fff; }
+  .pkg-card.featured .pkg-cta { background: var(--orange); color: #fff; }
+  .pkg-card.featured .pkg-cta:hover { background: var(--orange2); }
+
+  /* ── GLOSSARY ── */
+  .gloss-item {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .gloss-term { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--orange); min-width: 100px; }
+  .gloss-def { font-size: 0.82rem; color: rgba(255,255,255,0.55); flex: 1; line-height: 1.6; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: rgba(0,0,0,0.3);
+    border-top: 1px solid rgba(244,81,30,0.15);
+    padding: 32px 24px; text-align: center;
+  }
+  footer .brand { font-family: 'Syne', sans-serif; font-weight: 800; color: var(--orange); font-size: 1rem; margin-bottom: 6px; }
+  footer p { font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-bottom: 0; }
+
+  /* ── UTILITY ── */
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(244,81,30,0.3), transparent); margin: 8px 0 24px; }
+  .tip-box {
+    background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.2);
+    border-radius: 10px; padding: 14px 18px; margin-top: 14px;
+    font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.6;
+  }
+  .tip-box strong { color: var(--green); }
+
+  @media (max-width: 480px) {
+    nav { padding: 12px 16px; }
+    .hero { padding: 44px 16px 38px; }
+    section { padding: 36px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">❄ CallFlow™</span>
+  <div class="nav-links">
+    <a href="#pain">Pain</a>
+    <a href="#proof">Audit</a>
+    <a href="#solution">Solution</a>
+    <a href="#packages">Packages</a>
+    <a href="#glossary">Glossary</a>
+  </div>
+  <a class="nav-cta" href="https://wa.me/8801831591349?text=Hi%20Alauddin%2C%20I%20reviewed%20the%20Fresh%20Power%20Engineering%20audit%20and%20I%27m%20ready%20to%20talk." target="_blank">💬 WhatsApp Alauddin</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="top">
+  <div class="hero-badge">❄ Confidential Growth Audit · May 2026</div>
+  <p class="hero-sub">Prepared by <strong style="color:rgba(255,255,255,0.7)">CallFlow™</strong> for</p>
+  <h1>Fresh Power<br><span>Engineering</span></h1>
+  <p class="hero-desc">AC Installation · Repair · Maintenance · Dhaka, Bangladesh<br>HVAC Contractor · Vatara, Dhaka 1229</p>
+
+  <div class="score-strip">
+    <div class="score-pill">
+      <div class="val yellow">5.0★</div>
+      <div class="lbl">GBP Rating</div>
+    </div>
+    <div class="score-pill">
+      <div class="val orange">6</div>
+      <div class="lbl">Reviews Only</div>
+    </div>
+    <div class="score-pill">
+      <div class="val red">৳41,000</div>
+      <div class="lbl">Lost / Month</div>
+    </div>
+    <div class="score-pill">
+      <div class="val red">31/100</div>
+      <div class="lbl">Business Score</div>
+    </div>
+    <div class="score-pill">
+      <div class="val orange">Paid Ad</div>
+      <div class="lbl">Only Visibility</div>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <a class="btn-primary" href="https://wa.me/8801831591349?text=Hi%20Alauddin%2C%20I%20reviewed%20the%20Fresh%20Power%20Engineering%20audit%20and%20I%27m%20ready%20to%20talk." target="_blank">💬 WhatsApp Alauddin</a>
+    <a class="btn-secondary" href="https://callflowmarketer.github.io/callflow/" target="_blank">🌐 View CallFlow™ Site</a>
+  </div>
+</div>
+
+<!-- ZONE 1: PAIN -->
+<section id="pain">
+  <div class="zone-label">Zone 1 of 3</div>
+  <h2>The Pain —<br><em>What's Bleeding Right Now</em></h2>
+  <p>You're running paid Google Maps ads for "ac installation banani" — which means you already know organic isn't working. The ad is buying you visibility that your profile and website cannot sustain on their own. Here's exactly what that gap costs every month.</p>
+  <div class="divider"></div>
+
+  <!-- SCORE SECTION -->
+  <div class="zone-label step">STEP 01</div>
+  <h2 style="font-size:1.3rem; margin-bottom:20px;">Business Intelligence Score</h2>
+
+  <div class="score-card">
+    <div class="score-card-header">
+      <div class="pillar-name">Pillar 1 — GBP / Online Presence</div>
+      <div class="score-badge red">5/25</div>
+    </div>
+    <div class="score-card-body">
+      <div class="bar-wrap"><div class="bar-fill red" style="width:20%"></div></div>
+      <p>Only 6 reviews with zero response from owner. No GBP posts in detected period. Business description uses template language ("affordable and reliable") with no keyword-rich specificity. Address is Vatara — far from target keyword "banani" — creating geographic mismatch. No appointment URL linked. No Q&A populated. Ad is masking a weak organic foundation.</p>
+    </div>
+  </div>
+
+  <div class="score-card">
+    <div class="score-card-header">
+      <div class="pillar-name">Pillar 2 — Website Conversion</div>
+      <div class="score-badge red">6/25</div>
+    </div>
+    <div class="score-card-body">
+      <div class="bar-wrap"><div class="bar-fill red" style="width:24%"></div></div>
+      <p>Built on Hostinger/Zyro — a website builder with no technical SEO control. No sticky click-to-call button visible on mobile. Hero CTA says "Begin" — vague and unconverting. No emergency landing page. No service-area pages. No schema markup. No Google Tag Manager / GA4 detected. Speed is average. Site has no blog content to drive organic traffic. The only page driving leads is the ad, not the website.</p>
+    </div>
+  </div>
+
+  <div class="score-card">
+    <div class="score-card-header">
+      <div class="pillar-name">Pillar 3 — Review Authority</div>
+      <div class="score-badge orange">10/25</div>
+    </div>
+    <div class="score-card-body">
+      <div class="bar-wrap"><div class="bar-fill orange" style="width:40%"></div></div>
+      <p>5.0★ rating is perfect — a genuine strength. But only 6 reviews. Roni AC Service has 48 reviews. Haroon Engineering has 27 with 4.4★. Air Care has 26. Review velocity appears near zero. No owner responses to any reviews. Review content is generic ("very nice", "service is good") — no reviews mention specific technician names, services, or locations that build keyword relevance.</p>
+    </div>
+  </div>
+
+  <div class="score-card">
+    <div class="score-card-header">
+      <div class="pillar-name">Pillar 4 — Ad Presence & Tracking</div>
+      <div class="score-badge orange">10/25</div>
+    </div>
+    <div class="score-card-body">
+      <div class="bar-wrap"><div class="bar-fill orange" style="width:40%"></div></div>
+      <p>Active Google Maps sponsored ad is a positive — you understand paid traffic. However, the landing page (freshpowerengineering.com) is not optimised for conversion, meaning ad spend is partially wasted. No call tracking detected. No retargeting pixel. No WhatsApp click-to-chat on website. Ad copy says "Expert AC Servicing in Dhaka · Expert technicians fix AC fast · Same Day service" — good messaging, but website doesn't reinforce it.</p>
+    </div>
+  </div>
+
+  <!-- REVENUE LEAK -->
+  <div class="revenue-box">
+    <div class="big-num">৳41,000</div>
+    <div class="sub">vanishing from Fresh Power Engineering every 30 days</div>
+    <div class="sub" style="margin-top:4px">Because organic search sends those calls to Roni, AIRCONcare, and Haroon Engineering instead</div>
+    <div class="calc-table">
+      Monthly searches · "ac installation dhaka" + "ac repair banani" + "ac servicing near me" = <span class="num">~900</span> searches/month<br>
+      × Local Map Pack share (Dhaka/Banani) = <span class="num">35%</span> → <span class="num">315 local-intent searches</span><br>
+      × Not Visible CTR (3%) vs Map Pack #1 CTR (42%) = gap of <span class="num">39%</span><br>
+      × Leads lost/month = 315 × 0.39 = <span class="num">~123 missed contacts</span><br>
+      × 55% call-to-booking conversion for AC services = <span class="num">~68 missed jobs/month</span><br>
+      × Average AC job value Dhaka = <span class="num">৳600</span> [install ৳500–৳2,000, service ৳300–৳800, blended avg]<br>
+      = <span class="num">৳40,800</span> → rounded <span class="num">৳41,000 leaking every 30 days</span>
+    </div>
+  </div>
+
+  <!-- TOP BLEED POINTS -->
+  <div class="bleed-item">
+    <h4>🔴 #1 — Running Paid Ads to a Non-Converting Website</h4>
+    <p>Your ad drives clicks to freshpowerengineering.com. The site has no sticky call button, no emergency CTA above the fold, no urgency language, and no conversion tracking. Every ৳10 you spend on ads has its conversion rate cut in half by the weak landing page.</p>
+    <div class="fix">✅ Fix today: Add a sticky "📞 Call Now" button on mobile. Change hero CTA from "Begin" to "Book AC Service — Same Day".</div>
+  </div>
+
+  <div class="bleed-item">
+    <h4>🔴 #2 — 6 Reviews vs Competitors with 26–48</h4>
+    <p>Google Maps ranks profiles partly on review volume and velocity. Roni AC Service has 48 reviews and 4.5★. You have 6 reviews and 5.0★ — a better rating but invisible authority. Without organic review velocity, you will always need to pay for visibility.</p>
+    <div class="fix">✅ Fix today: After every completed job, send a WhatsApp message with your GBP review link. Ask for a review mentioning the specific service (e.g. "AC installation in Banani").</div>
+  </div>
+
+  <div class="bleed-item">
+    <h4>🔴 #3 — Zero Organic Ranking for Target Keywords</h4>
+    <p>Your GBP address is Vatara. You're targeting "banani" keywords. Without location-specific landing pages, service-area content, or citation building, Google cannot confidently rank you for Banani searches without the paid boost.</p>
+    <div class="fix">✅ Fix today: Add a "AC Installation in Banani" service-area page to your website. Mention Banani, Gulshan, Baridhara in your GBP description.</div>
+  </div>
+</section>
+
+<!-- ZONE 2: COMPETITOR AUDIT -->
+<section id="proof">
+  <div class="zone-label">Zone 2 of 3</div>
+  <h2>Competitor<br><em>Displacement Audit</em></h2>
+  <p>Search: "ac installation banani" — Google Maps, May 2026. Here's every threat you're facing and exactly how to displace them.</p>
+  <div class="divider"></div>
+
+  <div class="comp-card">
+    <div class="comp-head">
+      <div>
+        <div class="comp-name">Roni AC Service &amp; Sales Centre</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);margin-top:2px">RC6F+2JX · Open 24 Hours</div>
+      </div>
+      <span class="comp-tag threat">🏆 #1 Volume Threat</span>
+    </div>
+    <div class="comp-stats">
+      <div class="comp-stat"><div class="s-val">4.5★</div><div class="s-lbl">Rating</div></div>
+      <div class="comp-stat"><div class="s-val">48</div><div class="s-lbl">Reviews</div></div>
+      <div class="comp-stat"><div class="s-val">24hrs</div><div class="s-lbl">Hours</div></div>
+      <div class="comp-stat"><div class="s-val">~12/mo</div><div class="s-lbl">Review Velocity</div></div>
+    </div>
+    <div class="vuln-box"><strong>Vulnerability:</strong> 4.5★ — beatable. You have 5.0★. Their review responses are absent. No website linked. Pure GBP presence only, no landing page strategy. Counter: Your 5.0★ + a strong website beats this profile in 90 days with proper review velocity and service-area pages.</div>
+  </div>
+
+  <div class="comp-card">
+    <div class="comp-head">
+      <div>
+        <div class="comp-name">AIRCONcare</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);margin-top:2px">Ground Floor · Open 24 Hours</div>
+      </div>
+      <span class="comp-tag threat">📍 #1 Location Threat</span>
+    </div>
+    <div class="comp-stats">
+      <div class="comp-stat"><div class="s-val">4.2★</div><div class="s-lbl">Rating</div></div>
+      <div class="comp-stat"><div class="s-val">5</div><div class="s-lbl">Reviews</div></div>
+      <div class="comp-stat"><div class="s-val">24hrs</div><div class="s-lbl">Hours</div></div>
+    </div>
+    <div class="vuln-box"><strong>Vulnerability:</strong> Only 5 reviews and 4.2★ — below you on both counts. Appears in Map Pack due to geographic proximity to Banani. Counter: Match their 24hr presence in your GBP, and your superior rating + review growth will displace them quickly.</div>
+  </div>
+
+  <div class="comp-card">
+    <div class="comp-head">
+      <div>
+        <div class="comp-name">Haroon Engineering Ltd</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);margin-top:2px">6th Floor, Erectors House · HVAC Contractor</div>
+      </div>
+      <span class="comp-tag threat">📂 #1 Category Threat</span>
+    </div>
+    <div class="comp-stats">
+      <div class="comp-stat"><div class="s-val">4.4★</div><div class="s-lbl">Rating</div></div>
+      <div class="comp-stat"><div class="s-val">27</div><div class="s-lbl">Reviews</div></div>
+      <div class="comp-stat"><div class="s-val">9AM</div><div class="s-lbl">Opens</div></div>
+    </div>
+    <div class="vuln-box"><strong>Vulnerability:</strong> Closes at business hours — no 24hr service. You are Open 24 Hours. They likely have more GBP categories. Counter: Your 24hr advantage + adding secondary GBP categories (AC installation service, Air conditioning contractor, Refrigeration contractor) can surpass their category breadth in 24 hours — for free.</div>
+  </div>
+
+  <div class="comp-card">
+    <div class="comp-head">
+      <div>
+        <div class="comp-name">Jui — AC Service &amp; Repair Centre Banani</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);margin-top:2px">Open 24 Hours</div>
+      </div>
+      <span class="comp-tag weak">⚠ Emerging Threat</span>
+    </div>
+    <div class="comp-stats">
+      <div class="comp-stat"><div class="s-val">5.0★</div><div class="s-lbl">Rating</div></div>
+      <div class="comp-stat"><div class="s-val">3</div><div class="s-lbl">Reviews</div></div>
+    </div>
+    <div class="vuln-box"><strong>Vulnerability:</strong> Only 3 reviews. Has "Banani" in business name — a GBP keyword advantage. Counter: Pure volume play. Get to 15+ reviews before they do and they'll never catch up on authority.</div>
+  </div>
+
+  <div class="tip-box">
+    <strong>Lost Revenue vs Roni AC (Map Pack #1):</strong><br>
+    Roni CTR ~42% vs Fresh Power (Paid only) CTR ~8% organic gap<br>
+    Difference = 34% × 900 monthly searches = 306 lost organic clicks/month<br>
+    × 55% call rate × 60% booking = <strong style="color:#fff">~101 missed bookings/month × ৳600 avg = ৳60,600 annual advantage</strong> flowing to Roni
+  </div>
+</section>
+
+<!-- ZONE 3: SOLUTION -->
+<section id="solution">
+  <div class="zone-label">Zone 3 of 3</div>
+  <h2>The Solution —<br><em>90-Day Domination Roadmap</em></h2>
+  <p>Three phases. Zero guesswork. Every action ranked by impact-to-effort ratio for your Dhaka HVAC market.</p>
+  <div class="divider"></div>
+
+  <div class="roadmap-phase">
+    <div class="phase-header">
+      <div class="phase-num p1">01</div>
+      <div>
+        <div class="phase-title">Days 1–14 · Stop the Bleeding</div>
+        <div class="phase-sub">Quick wins that cost nothing but time</div>
+      </div>
+    </div>
+    <div class="phase-items">
+      <div class="phase-item"><span class="icon">📍</span> Add secondary GBP categories: "AC installation service", "Air conditioning contractor", "Refrigeration contractor", "Appliance repair service"</div>
+      <div class="phase-item"><span class="icon">✍️</span> Rewrite GBP description to include: Banani, Gulshan, Baridhara, Uttara, Vatara, Khilkhet — all service areas</div>
+      <div class="phase-item"><span class="icon">📸</span> Upload 10 new GBP photos: before/after jobs, technician at work, equipment, branded van or tools</div>
+      <div class="phase-item"><span class="icon">⭐</span> Send review request via WhatsApp to all past 30-day customers with your GBP link — target 15+ reviews in 14 days</div>
+      <div class="phase-item"><span class="icon">💬</span> Respond to all 6 existing reviews with keyword-rich owner responses (mention service type + area)</div>
+      <div class="phase-item"><span class="icon">📞</span> Add sticky click-to-call button to freshpowerengineering.com — visible on mobile above the fold</div>
+    </div>
+  </div>
+
+  <div class="roadmap-phase">
+    <div class="phase-header">
+      <div class="phase-num p2">02</div>
+      <div>
+        <div class="phase-title">Days 15–45 · Build the Machine</div>
+        <div class="phase-sub">Conversion infrastructure + organic foundation</div>
+      </div>
+    </div>
+    <div class="phase-items">
+      <div class="phase-item"><span class="icon">🌐</span> Replace Hostinger/Zyro site with CallFlow™ optimised landing page — mobile-first, sticky CTA, WhatsApp integration, click-to-call, schema markup</div>
+      <div class="phase-item"><span class="icon">📄</span> Add service-area pages: "AC Installation Banani", "AC Repair Gulshan", "AC Servicing Baridhara" — each 300+ words with local keywords</div>
+      <div class="phase-item"><span class="icon">📊</span> Install Google Tag Manager + GA4 — track every call click, WhatsApp click, and form submission</div>
+      <div class="phase-item"><span class="icon">🗓️</span> Post 3x per week on GBP: job completed photos, seasonal tips (Summer AC prep), offers (Free gas check with installation)</div>
+      <div class="phase-item"><span class="icon">🔗</span> Build 10 local citations: Yellow Pages BD, Bikroy, Shohoz, Daraz Business, local Dhaka directories</div>
+      <div class="phase-item"><span class="icon">💬</span> Add WhatsApp Business Chat widget to website — pre-filled message: "Hi, I need AC service in [area]"</div>
+    </div>
+  </div>
+
+  <div class="roadmap-phase">
+    <div class="phase-header">
+      <div class="phase-num p3">03</div>
+      <div>
+        <div class="phase-title">Days 46–90 · Dominate the Map Pack</div>
+        <div class="phase-sub">Paid amplification + review authority</div>
+      </div>
+    </div>
+    <div class="phase-items">
+      <div class="phase-item"><span class="icon">🎯</span> Launch Google Ads call-only campaign targeting: "ac installation banani", "ac repair gulshan", "emergency ac service dhaka" — ৳1,500/day budget</div>
+      <div class="phase-item"><span class="icon">⭐</span> Achieve 25+ reviews — surpassing Haroon Engineering (27) becomes realistic with velocity system in place</div>
+      <div class="phase-item"><span class="icon">📱</span> Launch Facebook/Instagram retargeting: anyone who visited website sees "Free AC Health Check" offer ad</div>
+      <div class="phase-item"><span class="icon">📋</span> Add Q&A to GBP: populate 8–10 questions with keyword-rich answers (What areas do you serve? Do you install LG/Samsung/Gree?)</div>
+      <div class="phase-item"><span class="icon">🏅</span> Apply for Google Guarantee / LSA if available in BD market — highest-trust placement in search</div>
+      <div class="phase-item"><span class="icon">📈</span> Monthly CallFlow™ reporting: rank tracking, call volume, review velocity, ad performance — full transparency</div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="zone-label">Investment</div>
+  <h2>Choose Your<br><em>Growth Package</em></h2>
+  <p>Three tiers. One goal: Fresh Power Engineering in the top 3 of the Banani/Dhaka AC market within 90 days.</p>
+  <div class="divider"></div>
+
+  <div class="pkg-grid">
+    <div class="pkg-card">
+      <div class="pkg-name">Starter</div>
+      <div class="pkg-price">৳8,000 <span>/month</span></div>
+      <div class="pkg-tagline">GBP + Review System</div>
+      <ul class="pkg-features">
+        <li>Full GBP optimisation (categories, description, photos)</li>
+        <li>Review request system setup (WhatsApp templates)</li>
+        <li>Owner response management — all reviews</li>
+        <li>3 GBP posts per week</li>
+        <li>Monthly performance report</li>
+      </ul>
+      <a class="pkg-cta" href="https://wa.me/8801831591349?text=Hi%20Alauddin%2C%20I%27m%20interested%20in%20the%20Starter%20package%20for%20Fresh%20Power%20Engineering." target="_blank">Get Started →</a>
+    </div>
+
+    <div class="pkg-card featured">
+      <div class="pkg-badge">⭐ Most Popular</div>
+      <div class="pkg-name">Growth</div>
+      <div class="pkg-price">৳18,000 <span>/month</span></div>
+      <div class="pkg-tagline">Full Funnel + Landing Page</div>
+      <ul class="pkg-features">
+        <li>Everything in Starter</li>
+        <li>New CallFlow™ landing page (replaces Zyro site)</li>
+        <li>3 service-area pages (Banani, Gulshan, Baridhara)</li>
+        <li>GTM + GA4 + call tracking installation</li>
+        <li>WhatsApp Business widget on website</li>
+        <li>10 local citation submissions</li>
+        <li>Weekly rank tracking + keyword report</li>
+      </ul>
+      <a class="pkg-cta" href="https://wa.me/8801831591349?text=Hi%20Alauddin%2C%20I%27m%20interested%20in%20the%20Growth%20package%20for%20Fresh%20Power%20Engineering." target="_blank">Get Started →</a>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-name">Dominator</div>
+      <div class="pkg-price">৳32,000 <span>/month</span></div>
+      <div class="pkg-tagline">Full Stack + Ads Management</div>
+      <ul class="pkg-features">
+        <li>Everything in Growth</li>
+        <li>Google Ads campaign management (budget separate)</li>
+        <li>Facebook/Instagram retargeting ads</li>
+        <li>5 service-area landing pages</li>
+        <li>Competitor displacement monthly audit</li>
+        <li>Bi-weekly strategy call with Alauddin</li>
+        <li>90-day Map Pack Top 3 goal with reporting</li>
+      </ul>
+      <a class="pkg-cta" href="https://wa.me/8801831591349?text=Hi%20Alauddin%2C%20I%27m%20interested%20in%20the%20Dominator%20package%20for%20Fresh%20Power%20Engineering." target="_blank">Get Started →</a>
+    </div>
+  </div>
+</section>
+
+<!-- GLOSSARY -->
+<section id="glossary">
+  <div class="zone-label">Reference</div>
+  <h2>Glossary</h2>
+  <p>Terms used in this audit — plain language, no jargon.</p>
+  <div class="divider"></div>
+
+  <div class="gloss-item">
+    <div class="gloss-term">GBP</div>
+    <div class="gloss-def">Google Business Profile. The listing that appears on Google Maps and Search when someone searches for your service. It includes your name, rating, photos, hours, and address.</div>
+  </div>
+  <div class="gloss-item">
+    <div class="gloss-term">Map Pack</div>
+    <div class="gloss-def">The top 3 local business results shown on Google Maps for a search query. Appearing here generates 42% of all clicks — the most valuable real estate in local search.</div>
+  </div>
+  <div class="gloss-item">
+    <div class="gloss-term">Review Velocity</div>
+    <div class="gloss-def">How many new reviews your profile receives per month. Google rewards consistent, recent reviews over old bulk reviews. Target: 10+ per month.</div>
+  </div>
+  <div class="gloss-item">
+    <div class="gloss-term">CTR</div>
+    <div class="gloss-def">Click-Through Rate. The percentage of people who click your listing after seeing it. Map Pack #1 gets ~42% CTR. Positions 4+ get under 5%.</div>
+  </div>
+  <div class="gloss-item">
+    <div class="gloss-term">Schema Markup</div>
+    <div class="gloss-def">Hidden code on your website that tells Google exactly what your business does, where you serve, and what services you offer — improving ranking accuracy.</div>
+  </div>
+  <div class="gloss-item">
+    <div class="gloss-term">GTM / GA4</div>
+    <div class="gloss-def">Google Tag Manager and Google Analytics 4. Tools that track how visitors use your website — which buttons they click, which pages they visit, and which actions lead to calls.</div>
+  </div>
+  <div class="gloss-item">
+    <div class="gloss-term">Citation</div>
+    <div class="gloss-def">Any online listing of your business Name, Address, and Phone number (NAP). Consistent citations on 20+ directories signal legitimacy to Google and improve Map Pack ranking.</div>
+  </div>
+  <div class="gloss-item">
+    <div class="gloss-term">Service-Area Page</div>
+    <div class="gloss-def">A dedicated page on your website targeting a specific neighbourhood (e.g. "AC Installation Banani"). Tells Google you serve that area even if your office isn't there.</div>
+  </div>
+  <div class="gloss-item">
+    <div class="gloss-term">CallFlow™</div>
+    <div class="gloss-def">Alauddin's digital growth system for service businesses. Combines GBP optimisation, conversion-focused landing pages, review systems, and ad management to drive inbound calls.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="brand">❄ CallFlow™</div>
+  <p>Confidential audit prepared for Fresh Power Engineering · May 2026</p>
+  <p style="margin-top:6px">Prepared by Alauddin · <a href="https://wa.me/8801831591349" style="color:var(--orange);text-decoration:none" target="_blank">WhatsApp: 01831-591349</a> · <a href="https://callflowmarketer.github.io/callflow/" style="color:var(--orange);text-decoration:none" target="_blank">callflowmarketer.github.io/callflow</a></p>
+</footer>
+
+</body>
+</html>
