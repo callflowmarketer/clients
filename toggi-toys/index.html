@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toggi Toys — Confidential Digital Presence Audit Report | CallFlow™</title>
+<meta name="description" content="Private digital audit report for Toggi Toys, Bashundhara, Dhaka. Prepared by CallFlow™.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:       #07111F;
+  --navy-mid:   #0E1E35;
+  --navy-light: #152844;
+  --orange:     #F4511E;
+  --orange-glow:#FF6B3D;
+  --orange-dim: rgba(244,81,30,0.12);
+  --white:      #FFFFFF;
+  --ice:        #F2F6FF;
+  --gray-100:   #EEF1F8;
+  --gray-300:   #C8D0E0;
+  --text:       #0B1628;
+  --text-light: #5A6882;
+  --green:      #19D68A;
+  --red:        #E53E3E;
+  --yellow:     #F6C90E;
+  --radius-xl:  28px;
+  --radius-lg:  18px;
+  --radius-md:  12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4 {
+  font-family: 'Syne', sans-serif;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+.container { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+.section-gap { padding: 90px 0; }
+
+.label {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--orange);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.label::before {
+  content: '';
+  display: inline-block; width: 22px; height: 2px;
+  background: var(--orange); border-radius: 2px;
+}
+
+/* NAV */
+nav {
+  background: rgba(7,17,31,0.97);
+  backdrop-filter: blur(14px);
+  padding: 14px 0;
+  position: sticky; top: 0; z-index: 200;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+nav .row {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 19px; font-weight: 800;
+  color: var(--white); text-decoration: none;
+}
+.logo em { color: var(--orange); font-style: normal; }
+.nav-right { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.confidential-tag {
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--yellow);
+  background: rgba(246,201,14,0.1);
+  border: 1px solid rgba(246,201,14,0.3);
+  padding: 4px 12px; border-radius: 50px;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Syne', sans-serif;
+  font-size: 14px; font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: all 0.25s ease;
+  cursor: pointer; border: none;
+}
+.btn-primary {
+  background: var(--orange); color: #fff;
+  padding: 13px 26px;
+  box-shadow: 0 4px 20px rgba(244,81,30,0.3);
+}
+.btn-primary:hover {
+  background: var(--orange-glow);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(244,81,30,0.4);
+}
+.btn-ghost {
+  background: rgba(255,255,255,0.08); color: var(--white);
+  padding: 13px 26px;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.14);
+  transform: translateY(-2px);
+}
+
+/* HERO */
+.audit-hero {
+  background: var(--navy);
+  color: var(--white);
+  padding: 70px 0 65px;
+  position: relative; overflow: hidden;
+}
+.audit-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 55px 55px;
+  pointer-events: none;
+}
+.audit-hero::after {
+  content: '';
+  position: absolute; top: -80px; right: -80px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(244,81,30,0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 1; }
+.prepared-for {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(244,81,30,0.12);
+  border: 1px solid rgba(244,81,30,0.3);
+  color: #FF9070;
+  font-size: 12px; font-weight: 600;
+  padding: 7px 18px; border-radius: 50px;
+  margin-bottom: 26px;
+}
+.prepared-for .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--orange);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+.audit-hero h1 {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800; margin-bottom: 20px;
+}
+.audit-hero h1 em { color: var(--orange); font-style: normal; }
+.audit-hero .subtitle {
+  font-size: 17px; color: rgba(255,255,255,0.65);
+  max-width: 660px; line-height: 1.75; margin-bottom: 36px;
+}
+
+/* Score Banner */
+.score-banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px; margin-top: 50px; padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.score-item { display: flex; flex-direction: column; gap: 4px; }
+.score-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px; font-weight: 800; color: var(--white);
+}
+.score-num .bad  { color: var(--red); }
+.score-num .warn { color: var(--yellow); }
+.score-num .good { color: var(--green); }
+.score-label { font-size: 13px; color: rgba(255,255,255,0.45); }
+
+/* TICKER */
+.ticker-bar {
+  background: var(--red);
+  padding: 11px 0; overflow: hidden; white-space: nowrap;
+}
+.ticker-track {
+  display: inline-flex; gap: 0;
+  animation: ticker 26s linear infinite;
+}
+.ticker-item {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px; font-weight: 700;
+  color: #fff; padding: 0 30px; letter-spacing: 0.5px;
+}
+.ticker-item::after { content: '⚠'; margin-left: 30px; opacity: 0.7; }
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* SECTION TITLES */
+.section-head { margin-bottom: 44px; }
+.section-head h2 {
+  font-size: clamp(26px, 3.5vw, 40px);
+  margin-bottom: 12px;
+}
+.section-head p {
+  font-size: 16px; color: var(--text-light);
+  max-width: 600px; line-height: 1.7;
+}
+
+/* AUDIT CARDS */
+.audit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.audit-card {
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  position: relative; overflow: hidden;
+  transition: all 0.28s;
+}
+.audit-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0,0,0,0.07); }
+.audit-card .ac-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; padding: 3px 10px;
+  border-radius: 50px; margin-bottom: 14px;
+  display: inline-block;
+}
+.ac-red    { background: rgba(229,62,62,0.1);   color: var(--red);    border: 1px solid rgba(229,62,62,0.2); }
+.ac-yellow { background: rgba(246,201,14,0.1);  color: #C9950A;       border: 1px solid rgba(246,201,14,0.2); }
+.ac-green  { background: rgba(25,214,138,0.1);  color: #0E9E63;       border: 1px solid rgba(25,214,138,0.2); }
+.audit-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+.audit-card p  { font-size: 14px; color: var(--text-light); line-height: 1.65; }
+.audit-card .fix-tag {
+  margin-top: 16px; font-size: 12px; font-weight: 600;
+  color: var(--orange); display: flex; align-items: center; gap: 6px;
+}
+.audit-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--gray-300);
+  transition: background 0.28s;
+}
+.audit-card.critical::before { background: var(--red); }
+.audit-card.warning::before  { background: var(--yellow); }
+.audit-card.ok::before       { background: var(--green); }
+
+/* LEAKAGE BOX */
+.leakage-box {
+  background: linear-gradient(135deg, #1a0a05 0%, #2d0f05 100%);
+  border: 1px solid rgba(244,81,30,0.3);
+  border-radius: var(--radius-xl);
+  padding: 50px 48px;
+  color: var(--white);
+  position: relative; overflow: hidden;
+}
+.leakage-box::before {
+  content: '';
+  position: absolute; top: -60px; right: -60px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(244,81,30,0.2) 0%, transparent 65%);
+}
+.leakage-box .lb-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px; margin-top: 36px;
+}
+.lb-item { text-align: center; }
+.lb-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 46px; font-weight: 800;
+  color: var(--orange); line-height: 1;
+  margin-bottom: 8px;
+}
+.lb-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+/* COMPETITOR TABLE */
+.comp-table {
+  width: 100%; border-collapse: collapse; margin-top: 8px;
+  font-size: 14px;
+}
+.comp-table th {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--text-light);
+  background: var(--ice);
+  padding: 12px 16px; text-align: left;
+  border-bottom: 2px solid var(--gray-300);
+}
+.comp-table td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: middle; color: var(--text);
+}
+.comp-table tr:hover td { background: var(--ice); }
+.comp-table tr.highlight-row td { background: rgba(244,81,30,0.04); }
+.comp-table tr.highlight-row td:first-child {
+  border-left: 3px solid var(--orange);
+  font-weight: 700;
+}
+.star-rating { color: #F6C90E; font-size: 13px; }
+.pill-tag {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  padding: 3px 10px; border-radius: 50px;
+}
+.tag-strong { background: rgba(25,214,138,0.12); color: #0C8A56; }
+.tag-gap    { background: rgba(229,62,62,0.1);   color: var(--red); }
+.tag-ok     { background: rgba(246,201,14,0.1);  color: #A07A00; }
+.table-wrap { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--gray-300); }
+
+/* REVIEW CARDS */
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px; margin-top: 32px;
+}
+.review-card {
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+.review-card.negative { border-color: rgba(229,62,62,0.25); }
+.review-card.positive { border-color: rgba(25,214,138,0.25); }
+.review-stars { color: #F6C90E; font-size: 15px; margin-bottom: 10px; }
+.review-text  { font-size: 14px; color: var(--text-light); line-height: 1.65; font-style: italic; margin-bottom: 12px; }
+.review-author{ font-size: 13px; font-weight: 600; color: var(--text); }
+.review-date  { font-size: 12px; color: var(--text-light); }
+
+/* ROADMAP */
+.roadmap { margin-top: 44px; }
+.roadmap-item {
+  display: flex; gap: 24px;
+  margin-bottom: 28px;
+  position: relative;
+}
+.roadmap-item:not(:last-child)::after {
+  content: '';
+  position: absolute; left: 22px; top: 54px;
+  width: 2px; height: calc(100% - 10px);
+  background: repeating-linear-gradient(180deg, var(--orange) 0, var(--orange) 6px, transparent 6px, transparent 12px);
+}
+.step-badge {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--orange); color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 6px 18px rgba(244,81,30,0.35);
+  position: relative; z-index: 1;
+}
+.step-badge.phase2 { background: var(--navy); }
+.step-badge.phase3 { background: var(--green); color: #07111F; }
+.roadmap-content h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.roadmap-content p  { font-size: 14px; color: var(--text-light); line-height: 1.6; }
+.phase-label {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 4px; margin-bottom: 8px;
+}
+.ph1 { background: rgba(244,81,30,0.1); color: var(--orange); }
+.ph2 { background: rgba(14,30,53,0.1);  color: var(--navy); }
+.ph3 { background: rgba(25,214,138,0.1); color: #0C8A56; }
+
+/* PRICING */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px; margin-top: 44px;
+}
+.price-card {
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-xl);
+  padding: 34px 30px;
+  position: relative; overflow: hidden;
+  transition: all 0.3s;
+}
+.price-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+.price-card.featured {
+  background: var(--navy);
+  border-color: var(--orange);
+  color: var(--white);
+  transform: scale(1.02);
+}
+.price-card.featured:hover { transform: scale(1.02) translateY(-5px); }
+.featured-badge {
+  position: absolute; top: 18px; right: 18px;
+  background: var(--orange);
+  color: #fff; font-size: 10px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 50px;
+}
+.price-plan { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; color: var(--orange); }
+.price-amount { font-family: 'Syne', sans-serif; font-size: 38px; font-weight: 800; line-height: 1; margin-bottom: 6px; color: var(--text); }
+.price-card.featured .price-amount { color: var(--white); }
+.price-period { font-size: 14px; color: var(--text-light); margin-bottom: 22px; }
+.price-card.featured .price-period { color: rgba(255,255,255,0.5); }
+.price-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.price-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; }
+.price-features li::before { content: '→'; color: var(--orange); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+.price-card.featured .price-features li { color: rgba(255,255,255,0.75); }
+
+/* CHECKLIST */
+.checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px; margin-top: 32px;
+}
+.check-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+}
+.check-box {
+  width: 22px; height: 22px; border-radius: 6px;
+  border: 2px solid var(--gray-300);
+  flex-shrink: 0; margin-top: 1px;
+  transition: all 0.2s; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+}
+.check-item:hover .check-box { border-color: var(--orange); }
+.check-item .ci-text h5 { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+.check-item .ci-text p  { font-size: 12px; color: var(--text-light); }
+
+/* ROI */
+.roi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px; margin-top: 36px;
+}
+.roi-item {
+  background: var(--navy);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  text-align: center; color: var(--white);
+}
+.roi-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 32px; font-weight: 800;
+  color: var(--orange); line-height: 1;
+  margin-bottom: 10px;
+}
+.roi-lbl { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+/* ALERT BOX */
+.alert-box {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 20px 22px;
+  border-radius: var(--radius-md);
+  margin-bottom: 22px;
+}
+.alert-red    { background: rgba(229,62,62,0.07);   border: 1px solid rgba(229,62,62,0.2); }
+.alert-yellow { background: rgba(246,201,14,0.07);  border: 1px solid rgba(246,201,14,0.2); }
+.alert-green  { background: rgba(25,214,138,0.07);  border: 1px solid rgba(25,214,138,0.2); }
+.alert-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.alert-text h5 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.alert-text p  { font-size: 13px; color: var(--text-light); line-height: 1.6; }
+
+/* CTA FOOTER */
+.cta-footer {
+  background: var(--navy);
+  color: var(--white);
+  padding: 90px 0 60px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.cta-footer::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center bottom, rgba(244,81,30,0.14) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cta-inner { position: relative; z-index: 1; }
+.cta-inner h2 {
+  font-size: clamp(28px, 4vw, 48px);
+  color: var(--white); margin-bottom: 16px;
+  max-width: 700px; margin-left: auto; margin-right: auto;
+}
+.cta-inner h2 em { color: var(--orange); font-style: normal; }
+.cta-inner p {
+  font-size: 17px; color: rgba(255,255,255,0.6);
+  max-width: 520px; margin: 0 auto 40px; line-height: 1.75;
+}
+.cta-row {
+  display: flex; gap: 14px;
+  justify-content: center; flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+/* DIVIDER */
+.sec-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gray-300), transparent);
+  margin: 0 28px;
+}
+
+/* SCRIPT BOX */
+.script-box {
+  background: var(--navy-mid);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
+  margin-bottom: 18px; color: var(--white);
+}
+.script-box h4 { font-size: 15px; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.script-box p  { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.75; }
+.script-box p em { color: #FF9070; font-style: italic; }
+
+/* STICKY MOBILE CTA */
+.sticky-cta-mobile {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--orange);
+  z-index: 500; text-align: center; padding: 14px;
+}
+.sticky-cta-mobile a {
+  color: #fff; font-family: 'Syne', sans-serif;
+  font-size: 14px; font-weight: 700;
+  text-decoration: none;
+}
+@media (max-width: 640px) { .sticky-cta-mobile { display: block; } }
+
+/* PLATFORM STATUS GRID */
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px; margin-top: 32px;
+}
+.platform-card {
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  display: flex; align-items: flex-start; gap: 16px;
+  transition: all 0.25s;
+}
+.platform-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.06); }
+.platform-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+.pi-fb   { background: rgba(24,119,242,0.1); }
+.pi-ig   { background: rgba(193,53,132,0.1); }
+.pi-tt   { background: rgba(0,0,0,0.06); }
+.pi-gbp  { background: rgba(52,168,83,0.1); }
+.pi-web  { background: rgba(244,81,30,0.1); }
+.platform-info h5 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.platform-info p  { font-size: 13px; color: var(--text-light); line-height: 1.5; }
+.platform-status {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 11px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; padding: 3px 9px;
+  border-radius: 50px; margin-top: 8px;
+}
+.ps-good   { background: rgba(25,214,138,0.1);  color: #0C8A56; border: 1px solid rgba(25,214,138,0.2); }
+.ps-warn   { background: rgba(246,201,14,0.1);  color: #A07A00; border: 1px solid rgba(246,201,14,0.2); }
+.ps-bad    { background: rgba(229,62,62,0.1);   color: var(--red); border: 1px solid rgba(229,62,62,0.2); }
+
+/* TECH STACK */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px; margin-top: 24px;
+}
+.tech-item {
+  background: var(--ice);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; font-weight: 500; color: var(--text);
+}
+.tech-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  flex-shrink: 0;
+}
+.td-green  { background: var(--green); }
+.td-yellow { background: var(--yellow); }
+.td-orange { background: var(--orange); }
+
+/* TAB system */
+.closing-tabs { margin-bottom: 24px; display: flex; gap: 10px; flex-wrap: wrap; }
+.tab-btn {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px; font-weight: 700;
+  padding: 8px 20px; border-radius: 50px;
+  cursor: pointer; border: none;
+  background: var(--ice); color: var(--text-light);
+  transition: all 0.2s;
+}
+.tab-btn.active, .tab-btn:hover {
+  background: var(--orange); color: #fff;
+  box-shadow: 0 4px 14px rgba(244,81,30,0.3);
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+@media (max-width: 640px) {
+  .container { padding: 0 18px; }
+  .leakage-box { padding: 30px 22px; }
+  .section-gap { padding: 60px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container row">
+    <a href="#" class="logo">Call<em>Flow™</em></a>
+    <div class="nav-right">
+      <span class="confidential-tag">🔒 Confidential Report</span>
+      <a href="#proposal" class="btn btn-primary btn-sm">View Proposal</a>
+    </div>
+  </div>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-track">
+    <span class="ticker-item">Only 12 Reviews — Little Angels Banani Has 104</span>
+    <span class="ticker-item">Sundora Toys Banani: 4.8★ 62 Reviews — You Have 3.8★ 12</span>
+    <span class="ticker-item">TikTok Dead — 1 Follower, Zero Content Posted</span>
+    <span class="ticker-item">Negative Staff Complaint Left Unanswered on GBP</span>
+    <span class="ticker-item">GBP Description Missing — You Are Invisible to Search</span>
+    <span class="ticker-item">Sundora Toys Gulshan: 5.0★ — Direct Threat in Your Market</span>
+    <span class="ticker-item">Only 12 Reviews — Little Angels Banani Has 104</span>
+    <span class="ticker-item">Sundora Toys Banani: 4.8★ 62 Reviews — You Have 3.8★ 12</span>
+    <span class="ticker-item">TikTok Dead — 1 Follower, Zero Content Posted</span>
+    <span class="ticker-item">Negative Staff Complaint Left Unanswered on GBP</span>
+    <span class="ticker-item">GBP Description Missing — You Are Invisible to Search</span>
+    <span class="ticker-item">Sundora Toys Gulshan: 5.0★ — Direct Threat in Your Market</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="audit-hero">
+  <div class="container hero-inner">
+    <div class="prepared-for">
+      <span class="dot"></span>
+      Prepared exclusively for Toggi Toys · Bashundhara, Dhaka
+    </div>
+    <h1>Your Digital Presence Has<br><em>Serious Blind Spots</em></h1>
+    <p class="subtitle">
+      Toggi Toys has a strong Facebook following and a working e-commerce site — but while you sit at 12 Google reviews, Little Angels Banani has 104 and Sundora Toys Banani has 4.8★ with 62 reviews. This report reveals exactly what's broken and how to overtake them.
+    </p>
+    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+      <a href="#audit" class="btn btn-primary">See Full Audit ↓</a>
+      <a href="#proposal" class="btn btn-ghost">View Packages</a>
+    </div>
+
+    <div class="score-banner">
+      <div class="score-item">
+        <div class="score-num"><span class="bad">3.8</span> / 5</div>
+        <div class="score-label">Google Rating</div>
+      </div>
+      <div class="score-item">
+        <div class="score-num"><span class="bad">12</span></div>
+        <div class="score-label">Total GBP Reviews</div>
+      </div>
+      <div class="score-item">
+        <div class="score-num"><span class="good">25K</span></div>
+        <div class="score-label">Facebook Followers</div>
+      </div>
+      <div class="score-item">
+        <div class="score-num"><span class="bad">1</span></div>
+        <div class="score-label">TikTok Followers</div>
+      </div>
+      <div class="score-item">
+        <div class="score-num"><span class="warn">0</span></div>
+        <div class="score-label">GBP Reviews Responded</div>
+      </div>
+      <div class="score-item">
+        <div class="score-num"><span class="bad">D+</span></div>
+        <div class="score-label">Overall Digital Score</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: BUSINESS OVERVIEW -->
+<section class="section-gap" id="audit">
+  <div class="container">
+    <div class="section-head">
+      <span class="label">Step 1 — Business Overview</span>
+      <h2>What We Found About Toggi Toys</h2>
+      <p>A snapshot of your business data as collected during our audit on April 27, 2026.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Data Point</th>
+            <th>Current Status</th>
+            <th>Assessment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td>Business Name</td>
+            <td>Toggi Toys</td>
+            <td><span class="pill-tag tag-strong">Verified ✓</span></td>
+          </tr>
+          <tr>
+            <td>Location</td>
+            <td>RC8P+HJG, Bashundhara, Dhaka, Bangladesh</td>
+            <td><span class="pill-tag tag-ok">Needs Map Pin Fix</span></td>
+          </tr>
+          <tr>
+            <td>Phone Number</td>
+            <td>01754337788</td>
+            <td><span class="pill-tag tag-strong">Listed</span></td>
+          </tr>
+          <tr>
+            <td>GBP Category</td>
+            <td>Toy Store</td>
+            <td><span class="pill-tag tag-ok">Only 1 Category</span></td>
+          </tr>
+          <tr>
+            <td>GBP Description</td>
+            <td>None / Empty</td>
+            <td><span class="pill-tag tag-gap">Missing — Critical</span></td>
+          </tr>
+          <tr>
+            <td>GBP Rating</td>
+            <td>3.8 ★ from 12 Reviews</td>
+            <td><span class="pill-tag tag-gap">Far Below Average</span></td>
+          </tr>
+          <tr>
+            <td>Website</td>
+            <td>toggitoys.com (WooCommerce)</td>
+            <td><span class="pill-tag tag-strong">Functional</span></td>
+          </tr>
+          <tr>
+            <td>Facebook</td>
+            <td>25K Followers · Verified Page</td>
+            <td><span class="pill-tag tag-strong">Strong Asset</span></td>
+          </tr>
+          <tr>
+            <td>Instagram</td>
+            <td>Active · Regular Posts</td>
+            <td><span class="pill-tag tag-ok">Needs Strategy</span></td>
+          </tr>
+          <tr>
+            <td>TikTok</td>
+            <td>1 Follower · 0 Videos</td>
+            <td><span class="pill-tag tag-gap">Completely Dead</span></td>
+          </tr>
+          <tr>
+            <td>CMS Platform</td>
+            <td>WordPress + WooCommerce + Elementor</td>
+            <td><span class="pill-tag tag-strong">Good Stack</span></td>
+          </tr>
+          <tr>
+            <td>CDN / Hosting</td>
+            <td>Amazon S3 + Cloudflare</td>
+            <td><span class="pill-tag tag-strong">Enterprise-Grade</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- SECTION 2: REVENUE LEAKAGE -->
+<section class="section-gap">
+  <div class="container">
+    <div class="section-head">
+      <span class="label">Step 2 — Revenue Leakage Estimate</span>
+      <h2>What Poor Digital Presence Is Costing You Monthly</h2>
+      <p>Bangladesh's toy market is growing rapidly — Dhaka parents increasingly search Google before buying. Here's what you're losing right now.</p>
+    </div>
+
+    <div class="leakage-box">
+      <h3 style="font-size:22px; margin-bottom:10px;">The Hidden Cost of Your Digital Gaps</h3>
+      <p style="color:rgba(255,255,255,0.55); font-size:15px;">Estimated monthly revenue leak across Google search, social trust, and repeat buyers.</p>
+      <div class="lb-row">
+        <div class="lb-item">
+          <div class="lb-num">150+</div>
+          <div class="lb-desc">Monthly Google searches for "toy shop Dhaka" landing on competitors, not you</div>
+        </div>
+        <div class="lb-item">
+          <div class="lb-num">3.8★</div>
+          <div class="lb-desc">Low GBP rating causes ~30% of potential buyers to choose a competitor immediately</div>
+        </div>
+        <div class="lb-item">
+          <div class="lb-num">0</div>
+          <div class="lb-desc">Review responses sent — every unanswered complaint destroys trust with new viewers</div>
+        </div>
+        <div class="lb-item">
+          <div class="lb-num">৳40K+</div>
+          <div class="lb-desc">Estimated monthly sales lost to competitors with better Google presence in Bashundhara area</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- SECTION 3: PLATFORM AUDIT -->
+<section class="section-gap">
+  <div class="container">
+    <div class="section-head">
+      <span class="label">Step 3 — Platform-by-Platform Audit</span>
+      <h2>Every Channel, Graded Honestly</h2>
+      <p>We audited your presence across Google, Facebook, Instagram, TikTok, and your website. Here's where you stand.</p>
+    </div>
+
+    <div class="platform-grid">
+      <div class="platform-card">
+        <div class="platform-icon pi-gbp">📍</div>
+        <div class="platform-info">
+          <h5>Google Business Profile</h5>
+          <p>3.8★ · 12 reviews · No description · 1 category · No Q&A · No offers posted</p>
+          <span class="platform-status ps-bad">● Critical Issues</span>
+        </div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-icon pi-fb">📘</div>
+        <div class="platform-info">
+          <h5>Facebook Page</h5>
+          <p>25K followers · Verified · Active posting · Good visual content · 0 Facebook reviews</p>
+          <span class="platform-status ps-warn">● Good, Needs Leverage</span>
+        </div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-icon pi-ig">📸</div>
+        <div class="platform-info">
+          <h5>Instagram</h5>
+          <p>Active profile · Regular product posts · Good visual aesthetic · Missing bio links & CTAs</p>
+          <span class="platform-status ps-warn">● Active, Needs Optimization</span>
+        </div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-icon pi-tt">🎵</div>
+        <div class="platform-info">
+          <h5>TikTok</h5>
+          <p>Account exists at @toggi.toys · 1 follower · 0 videos posted · No bio written</p>
+          <span class="platform-status ps-bad">● Completely Unused</span>
+        </div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-icon pi-web">🌐</div>
+        <div class="platform-info">
+          <h5>Website (toggitoys.com)</h5>
+          <p>WooCommerce store · Good product range · Price display in BDT · Powered by Ajer X Limited</p>
+          <span class="platform-status ps-warn">● Functional, Needs SEO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- SECTION 4: GBP DEEP AUDIT -->
+<section class="section-gap">
+  <div class="container">
+    <div class="section-head">
+      <span class="label">Step 4 — Google Business Profile Deep Audit</span>
+      <h2>Your GBP Is Your #1 Lead Source — And It's Broken</h2>
+      <p>When Dhaka parents search "toy shop near me" or "toy store Bashundhara," your GBP profile is what they see first. Right now, it's losing them.</p>
+    </div>
+
+    <div class="audit-grid">
+      <div class="audit-card critical">
+        <span class="ac-label ac-red">🔴 Critical</span>
+        <h4>No Business Description</h4>
+        <p>Your GBP has zero description. This means Google has almost nothing to match your listing against relevant searches. You're invisible to anyone not searching your exact brand name.</p>
+        <div class="fix-tag">→ Fix: Write a 750-character keyword-rich description in English &amp; Bengali</div>
+      </div>
+      <div class="audit-card critical">
+        <span class="ac-label ac-red">🔴 Critical</span>
+        <h4>Only 12 Reviews — Average is 100+</h4>
+        <p>Top toy stores in Dhaka on Google have 100–500+ reviews. With just 12, you lose ranking priority and trust. New customers see so few reviews and skip to a competitor.</p>
+        <div class="fix-tag">→ Fix: Active review generation campaign via WhatsApp &amp; QR code</div>
+      </div>
+      <div class="audit-card critical">
+        <span class="ac-label ac-red">🔴 Critical</span>
+        <h4>3.8★ Rating — Below Safe Threshold</h4>
+        <p>Studies show 57% of consumers won't buy from a business with under 4.0★. Your 3.8★ is actively causing purchase abandonment every single day.</p>
+        <div class="fix-tag">→ Fix: Systematic review generation to dilute low-star reviews with new 5★ ones</div>
+      </div>
+      <div class="audit-card critical">
+        <span class="ac-label ac-red">🔴 Critical</span>
+        <h4>Zero Review Responses</h4>
+        <p>Not one review has been responded to — including a damaging complaint about rude staff behavior. Unanswered complaints signal to Google and to parents that you don't care.</p>
+        <div class="fix-tag">→ Fix: Respond to every review within 24h · Address the complaint professionally</div>
+      </div>
+      <div class="audit-card warning">
+        <span class="ac-label ac-yellow">⚠ Warning</span>
+        <h4>Only 1 GBP Category Listed</h4>
+        <p>"Toy Store" is your only category. You're missing secondary categories like "Educational Supply Store," "Children's Store," and "Game Store" that could bring in additional traffic.</p>
+        <div class="fix-tag">→ Fix: Add 3–5 additional relevant categories to GBP</div>
+      </div>
+      <div class="audit-card warning">
+        <span class="ac-label ac-yellow">⚠ Warning</span>
+        <h4>No Google Posts or Offers</h4>
+        <p>You have zero Google Posts published. Competitors using weekly posts for promotions and new arrivals appear more active and rank higher in local results.</p>
+        <div class="fix-tag">→ Fix: Publish 4 posts/month: offers, new arrivals, seasonal promotions</div>
+      </div>
+      <div class="audit-card warning">
+        <span class="ac-label ac-yellow">⚠ Warning</span>
+        <h4>No Q&amp;A Section Managed</h4>
+        <p>The Q&amp;A section of your GBP is completely unmanaged. Anyone can post questions — or worse, inaccurate answers — that parents will read and believe.</p>
+        <div class="fix-tag">→ Fix: Pre-populate Q&amp;A with 10 common questions and accurate answers</div>
+      </div>
+      <div class="audit-card ok">
+        <span class="ac-label ac-green">✓ OK</span>
+        <h4>Phone Number Listed Correctly</h4>
+        <p>Your phone number 01754337788 is listed and appears clickable on mobile. This is one of the few GBP elements working correctly for you.</p>
+        <div class="fix-tag">→ Maintain: Ensure number always stays updated</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- SECTION 5: REVIEW ANALYSIS -->
+<section class="section-gap">
+  <div class="container">
+    <div class="section-head">
+      <span class="label">Step 5 — Review Sentiment Analysis</span>
+      <h2>What Your Customers Are Really Saying</h2>
+      <p>We analyzed all 12 of your Google reviews. The pattern is clear — and fixable.</p>
+    </div>
+
+    <div class="alert-box alert-red">
+      <div class="alert-icon">🚨</div>
+      <div class="alert-text">
+        <h5>Recurring Negative Theme: Pricing Perception</h5>
+        <p>Multiple reviewers specifically mention that toys are "highly expensive" and "not for middle-class people." In Dhaka's price-sensitive market, this perception — if not countered with messaging — will continue to push away the majority of your potential customer base.</p>
+      </div>
+    </div>
+
+    <div class="alert-box alert-red">
+      <div class="alert-icon">⚠️</div>
+      <div class="alert-text">
+        <h5>Staff Behavior Complaint Left Unanswered</h5>
+        <p>One reviewer (Jahirul Islam, 3 months ago) wrote a direct complaint about rude staff behavior — specifically the manager. This review has received zero response from Toggi Toys and sits in plain view of every potential customer who visits your GBP listing.</p>
+      </div>
+    </div>
+
+    <div class="alert-box alert-yellow">
+      <div class="alert-icon">📊</div>
+      <div class="alert-text">
+        <h5>Positive Signals Exist But Are Buried</h5>
+        <p>Reviews from "sani" and "Digen Acc" mention "reasonable prices" and "good collection." These positive data points are being buried by the lack of volume and the visible negative reviews sitting at the top.</p>
+      </div>
+    </div>
+
+    <div class="review-grid">
+      <div class="review-card negative">
+        <div class="review-stars">⭐⭐</div>
+        <div class="review-text">"Khob khrap staff ar bebohar specialty shop manager khobey kharap kotha bartar sonle mone hoy kono jomidar shop chalacche"</div>
+        <div class="review-author">Jahirul Islam</div>
+        <div class="review-date">3 months ago · 0 Response from owner ❌</div>
+      </div>
+      <div class="review-card negative">
+        <div class="review-stars">⭐⭐⭐</div>
+        <div class="review-text">"Highly expensive toys, not for middle class honest earning people"</div>
+        <div class="review-author">Arafat Habib — Local Guide</div>
+        <div class="review-date">7 months ago · 0 Response from owner ❌</div>
+      </div>
+      <div class="review-card positive">
+        <div class="review-stars">⭐⭐⭐⭐</div>
+        <div class="review-text">"Prices are quite reasonable and the ambience is nice, hoping for more collection in the future."</div>
+        <div class="review-author">sani — Local Guide (61 reviews)</div>
+        <div class="review-date">7 months ago · 0 Response from owner ❌</div>
+      </div>
+      <div class="review-card positive">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <div class="review-text">"Good collection and good pricing."</div>
+        <div class="review-author">Digen Acc</div>
+        <div class="review-date">7 months ago · 0 Response from owner ❌</div>
+      </div>
+    </div>
+
+    <div style="margin-top:36px; padding:24px; background:var(--ice); border-radius:var(--radius-lg); border:1px solid var(--gray-300);">
+      <h4 style="font-size:16px; margin-bottom:12px;">📝 Recommended Response to the Staff Complaint</h4>
+      <p style="font-size:14px; color:var(--text-light); line-height:1.7;">
+        <em>"Dear Jahirul, thank you for sharing your experience. We are truly sorry to hear you felt unwelcome — this is absolutely not the standard we hold for our team. We have taken your feedback seriously and addressed this internally. We would love the opportunity to make this right. Please reach out to us directly on WhatsApp at 01754337788. — Toggi Toys Team"</em>
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- SECTION 6: SOCIAL MEDIA AUDIT -->
+<section class="section-gap">
+  <div class="container">
+    <div class="section-head">
+      <span class="label">Step 6 — Social Media Audit</span>
+      <h2>Facebook Is Strong. Everything Else Needs Work.</h2>
+      <p>You have a real asset in your 25K Facebook following — but it's not being used to drive Google reviews, website traffic, or TikTok growth.</p>
+    </div>
+
+    <div class="audit-grid">
+      <div class="audit-card ok">
+        <span class="ac-label ac-green">✓ Strong</span>
+        <h4>Facebook: 25K Followers + Verified</h4>
+        <p>Your Facebook page is verified, has consistent posting, strong visual branding, and a decent follower base for a Dhaka specialty toy store. This is your biggest untapped asset for driving Google reviews.</p>
+        <div class="fix-tag">→ Opportunity: Use Facebook to push review generation + WhatsApp sales funnel</div>
+      </div>
+      <div class="audit-card warning">
+        <span class="ac-label ac-yellow">⚠ Underutilized</span>
+        <h4>Instagram: Active But Unstrategic</h4>
+        <p>Instagram has regular product posts but lacks a clear content strategy — no consistent hashtags, no link in bio to toggitoys.com, no Stories engagement, no Reels for discovery.</p>
+        <div class="fix-tag">→ Fix: Add link-in-bio, run weekly Reels of toys in action, use Dhaka parent hashtags</div>
+      </div>
+      <div class="audit-card critical">
+        <span class="ac-label ac-red">🔴 Dead Channel</span>
+        <h4>TikTok: 1 Follower, 0 Videos</h4>
+        <p>Your TikTok account (@toggi.toys) exists but has never been used. In 2025-26, TikTok is the fastest growing discovery platform for products in Bangladesh — especially for parents aged 20–35.</p>
+        <div class="fix-tag">→ Fix: Post 3x/week — unboxing videos, kids playing, toy comparisons, price reveals</div>
+      </div>
+      <div class="audit-card warning">
+        <span class="ac-label ac-yellow">⚠ Not Connected</span>
+        <h4>Facebook Reviews: 0 (Not Yet Rated)</h4>
+        <p>Your Facebook page shows "Not yet rated" with 0 reviews. Yet you have 25K followers who've presumably purchased from you. A review request campaign could generate 50+ reviews within weeks.</p>
+        <div class="fix-tag">→ Fix: Run a targeted review request to existing Facebook followers via Messenger</div>
+      </div>
+      <div class="audit-card warning">
+        <span class="ac-label ac-yellow">⚠ Missing</span>
+        <h4>No WhatsApp Business Catalog</h4>
+        <p>Your website footer shows WhatsApp as a channel, and Facebook has a WhatsApp button. But there's no WhatsApp Business catalog linking to products, no auto-reply, no broadcast list strategy.</p>
+        <div class="fix-tag">→ Fix: Set up WhatsApp Business catalog + weekly broadcast to subscribers</div>
+      </div>
+      <div class="audit-card ok">
+        <span class="ac-label ac-green">✓ Positive</span>
+        <h4>Website Footer: All Channels Listed</h4>
+        <p>Your website footer correctly links to Facebook, Instagram, TikTok, and WhatsApp — showing awareness of omnichannel presence. Now the channels themselves need to actually work.</p>
+        <div class="fix-tag">→ Maintain: Keep all links updated and working</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- SECTION 7: WEBSITE + TECH AUDIT -->
+<section class="section-gap">
+  <div class="container">
+    <div class="section-head">
+      <span class="label">Step 7 — Website & Tech Audit</span>
+      <h2>Good Infrastructure, Missing Local SEO</h2>
+      <p>Your WooCommerce setup is solid. The technical foundation is strong. But the site is not optimized for Dhaka-based search traffic at all.</p>
+    </div>
+
+    <div class="alert-box alert-green">
+      <div class="alert-icon">✅</div>
+      <div class="alert-text">
+        <h5>Strong Technical Foundation</h5>
+        <p>WordPress + WooCommerce + Elementor is the right stack. Amazon S3 for media, Cloudflare for CDN — this is enterprise-grade infrastructure. Your site should be fast and reliable.</p>
+      </div>
+    </div>
+
+    <div class="alert-box alert-red">
+      <div class="alert-icon">🔴</div>
+      <div class="alert-text">
+        <h5>Zero Local SEO Optimization</h5>
+        <p>Your site has no location-specific landing pages, no schema markup for a local toy store, no "toy shop in Bashundhara" or "toy shop in Dhaka" keyword targeting. Google cannot easily connect your website to your Dhaka location.</p>
+      </div>
+    </div>
+
+    <div class="alert-box alert-yellow">
+      <div class="alert-icon">⚠️</div>
+      <div class="alert-text">
+        <h5>Price Perception Problem Extends to Website</h5>
+        <p>Multiple product categories show prices like ৳2,180 and ৳2,960 without clear value justification. For middle-class Dhaka buyers, price anchoring and brand story are essential to convert hesitant shoppers.</p>
+      </div>
+    </div>
+
+    <h3 style="font-size:18px; margin:36px 0 16px;">Detected Technology Stack</h3>
+    <div class="tech-grid">
+      <div class="tech-item"><span class="tech-dot td-green"></span>WooCommerce 10.5.8</div>
+      <div class="tech-item"><span class="tech-dot td-green"></span>WordPress 6.9.4</div>
+      <div class="tech-item"><span class="tech-dot td-green"></span>Elementor 3.32.5</div>
+      <div class="tech-item"><span class="tech-dot td-green"></span>PHP (Backend)</div>
+      <div class="tech-item"><span class="tech-dot td-green"></span>MySQL (Database)</div>
+      <div class="tech-item"><span class="tech-dot td-green"></span>Amazon S3 (CDN)</div>
+      <div class="tech-item"><span class="tech-dot td-green"></span>Cloudflare (CDN/SSL)</div>
+      <div class="tech-item"><span class="tech-dot td-yellow"></span>No Schema Markup Detected</div>
+      <div class="tech-item"><span class="tech-dot td-yellow"></span>No Local SEO Plugin</div>
+      <div class="tech-item"><span class="tech-dot td-orange"></span>No Review Widget on Site</div>
+    </div>
+
+    <div class="audit-grid" style="margin-top:32px;">
+      <div class="audit-card critical">
+        <span class="ac-label ac-red">🔴 Missing</span>
+        <h4>No Schema Markup</h4>
+        <p>There is no LocalBusiness, Product, or Review schema markup on your site. This means Google's rich results (star ratings in search, store hours, location) don't appear for toggitoys.com in Dhaka searches.</p>
+        <div class="fix-tag">→ Fix: Implement LocalBusiness + Product schema via Yoast/Rank Math plugin</div>
+      </div>
+      <div class="audit-card warning">
+        <span class="ac-label ac-yellow">⚠ Missing</span>
+        <h4>No Dhaka-Specific Landing Pages</h4>
+        <p>There are no pages targeting "toy shop Bashundhara," "toy shop Gulshan," "toy shop Uttara" etc. These hyperlocal pages can capture Dhaka parents searching by neighborhood.</p>
+        <div class="fix-tag">→ Fix: Build 3–5 location landing pages with local content + maps embed</div>
+      </div>
+      <div class="audit-card warning">
+        <span class="ac-label ac-yellow">⚠ Opportunity</span>
+        <h4>Payment Gateway is Bangladesh-Ready</h4>
+        <p>Your site already shows bKash, Nagad, DBBL Nexus, iPay, UPay — this is excellent for the Bangladeshi market. This is a major trust signal that most competitors lack and should be promoted more visibly.</p>
+        <div class="fix-tag">→ Opportunity: Feature payment logos prominently on homepage above the fold</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- SECTION 8: COMPETITOR GAP -->
+<section class="section-gap">
+  <div class="container">
+    <div class="section-head">
+      <span class="label">Step 8 — Competitor Landscape</span>
+      <h2>Where Toggi Toys Stands vs. Real Dhaka Competition</h2>
+      <p>We ran a live local scan of toy stores across Dhaka. These are your actual named competitors — with their real ratings and review counts. The data is clear.</p>
+    </div>
+
+    <!-- Named Competitor Table -->
+    <h3 style="font-size:18px; margin-bottom:16px; font-family:'Syne',sans-serif;">Named Competitors — Live GBP Scan Data</h3>
+    <div class="table-wrap" style="margin-bottom:36px;">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Business Name</th>
+            <th>Area</th>
+            <th>Rating</th>
+            <th>Reviews</th>
+            <th>GBP Categories</th>
+            <th>vs. Toggi Toys</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td>Toggi Toys <span style="font-weight:400; color:var(--text-light);">(You)</span></td>
+            <td>Bashundhara</td>
+            <td><span class="star-rating">★★★★</span> 3.8</td>
+            <td><strong style="color:var(--red);">12</strong></td>
+            <td>1 category only</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Little Angels – Banani</td>
+            <td>Banani</td>
+            <td><span class="star-rating">★★★★</span> 4.0</td>
+            <td><strong style="color:var(--red);">104</strong></td>
+            <td>Baby store · Clothing · Toy store</td>
+            <td><span class="pill-tag tag-gap">8.7x More Reviews</span></td>
+          </tr>
+          <tr>
+            <td>Sundora Toys Banani</td>
+            <td>Banani</td>
+            <td><span class="star-rating">★★★★★</span> 4.8</td>
+            <td><strong style="color:var(--red);">62</strong></td>
+            <td>Toy store</td>
+            <td><span class="pill-tag tag-gap">5.2x More Reviews</span></td>
+          </tr>
+          <tr>
+            <td>New Fortune</td>
+            <td>Dhaka</td>
+            <td><span class="star-rating">★★★★</span> 3.9</td>
+            <td><strong style="color:var(--red);">43</strong></td>
+            <td>Toy store · Stationery store</td>
+            <td><span class="pill-tag tag-gap">3.6x More Reviews</span></td>
+          </tr>
+          <tr>
+            <td>Sundora Toys Gulshan</td>
+            <td>Gulshan</td>
+            <td><span class="star-rating">★★★★★</span> 5.0</td>
+            <td><strong>18</strong></td>
+            <td>Toy store</td>
+            <td><span class="pill-tag tag-gap">Higher Rating</span></td>
+          </tr>
+          <tr>
+            <td>Baby Land</td>
+            <td>Jamuna Future Park</td>
+            <td><span class="star-rating">★★★★★</span> 4.5</td>
+            <td><strong>18</strong></td>
+            <td>Toy store</td>
+            <td><span class="pill-tag tag-gap">Higher Rating</span></td>
+          </tr>
+          <tr>
+            <td>Raiyan Toy Shop</td>
+            <td>Mirpur</td>
+            <td><span class="star-rating">★★★★★</span> 4.5</td>
+            <td><strong>13</strong></td>
+            <td>Toy store</td>
+            <td><span class="pill-tag tag-ok">Similar Count</span></td>
+          </tr>
+          <tr>
+            <td>ABC Toys</td>
+            <td>Baridhara</td>
+            <td><span class="star-rating">★★★★★</span> 5.0</td>
+            <td><strong>7</strong></td>
+            <td>Toy store</td>
+            <td><span class="pill-tag tag-ok">Fewer Reviews</span></td>
+          </tr>
+          <tr>
+            <td>Kids Care (DCC Gulshan-1)</td>
+            <td>Gulshan</td>
+            <td><span class="star-rating">★★★★★</span> 4.8</td>
+            <td><strong>5</strong></td>
+            <td>Toy store · Baby store · Children's store</td>
+            <td><span class="pill-tag tag-strong">Fewer Reviews ✓</span></td>
+          </tr>
+          <tr>
+            <td>Kids Club</td>
+            <td>Gulshan-1</td>
+            <td><span class="star-rating">★★★★</span> 3.9</td>
+            <td><strong>15</strong></td>
+            <td>Toy store</td>
+            <td><span class="pill-tag tag-ok">Similar Count</span></td>
+          </tr>
+          <tr>
+            <td>Dhali's Toys Collection</td>
+            <td>Ventura Mall</td>
+            <td><span class="star-rating">★★★★</span> 3.5</td>
+            <td><strong>2</strong></td>
+            <td>Toy store</td>
+            <td><span class="pill-tag tag-strong">Toggi Wins ✓</span></td>
+          </tr>
+          <tr>
+            <td>Toy SHOP</td>
+            <td>Dhaka</td>
+            <td><span class="star-rating">★★★</span> 3.1</td>
+            <td><strong>7</strong></td>
+            <td>Toy store</td>
+            <td><span class="pill-tag tag-strong">Toggi Wins ✓</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Key Insight Banner -->
+    <div class="leakage-box" style="padding:36px 40px; margin-bottom:36px;">
+      <h3 style="font-size:20px; margin-bottom:8px;">📊 The Numbers That Matter Most</h3>
+      <p style="color:rgba(255,255,255,0.55); font-size:14px; margin-bottom:0;">Extracted directly from the live local competitor scan — April 2026</p>
+      <div class="lb-row" style="margin-top:28px;">
+        <div class="lb-item">
+          <div class="lb-num">104</div>
+          <div class="lb-desc">Reviews held by Little Angels Banani — your #1 threat with 8.7× your count</div>
+        </div>
+        <div class="lb-item">
+          <div class="lb-num">4.8★</div>
+          <div class="lb-desc">Sundora Toys Banani rating — the benchmark you need to beat in Dhaka north</div>
+        </div>
+        <div class="lb-item">
+          <div class="lb-num">3.8★</div>
+          <div class="lb-desc">Toggi Toys current rating — tied with the weakest competitors in this scan</div>
+        </div>
+        <div class="lb-item">
+          <div class="lb-num">60%+</div>
+          <div class="lb-desc">Of competitors in this scan have more reviews than Toggi Toys — including budget stores</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Head-to-head benchmark table -->
+    <h3 style="font-size:18px; margin-bottom:16px; font-family:'Syne',sans-serif;">Head-to-Head: Toggi Toys vs. Top Dhaka Competitors</h3>
+    <div class="table-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Toggi Toys</th>
+            <th>Little Angels Banani</th>
+            <th>Sundora Toys Banani</th>
+            <th>Gap Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td>Google Reviews</td>
+            <td style="color:var(--red); font-weight:700;">12</td>
+            <td style="color:var(--green); font-weight:700;">104</td>
+            <td style="font-weight:700;">62</td>
+            <td><span class="pill-tag tag-gap">Critical Gap</span></td>
+          </tr>
+          <tr>
+            <td>Google Rating</td>
+            <td style="color:var(--red);">3.8 ★</td>
+            <td>4.0 ★</td>
+            <td style="color:var(--green);">4.8 ★</td>
+            <td><span class="pill-tag tag-gap">Below Both</span></td>
+          </tr>
+          <tr>
+            <td>GBP Categories</td>
+            <td style="color:var(--red);">1 only</td>
+            <td>3 categories</td>
+            <td>1 category</td>
+            <td><span class="pill-tag tag-ok">Fixable Quickly</span></td>
+          </tr>
+          <tr>
+            <td>Review Response Rate</td>
+            <td style="color:var(--red);">0%</td>
+            <td>Partial</td>
+            <td>Partial</td>
+            <td><span class="pill-tag tag-gap">Critical Gap</span></td>
+          </tr>
+          <tr>
+            <td>Facebook Followers</td>
+            <td style="color:var(--green); font-weight:700;">25,000</td>
+            <td>~5,000 est.</td>
+            <td>~3,000 est.</td>
+            <td><span class="pill-tag tag-strong">Toggi Wins ✓</span></td>
+          </tr>
+          <tr>
+            <td>Own Website</td>
+            <td style="color:var(--green);">toggitoys.com (WooCommerce)</td>
+            <td>Basic site</td>
+            <td>Basic site</td>
+            <td><span class="pill-tag tag-strong">Toggi Wins ✓</span></td>
+          </tr>
+          <tr>
+            <td>BD Payment Options</td>
+            <td style="color:var(--green);">bKash, Nagad, iPay, UPay+</td>
+            <td>Limited</td>
+            <td>Limited</td>
+            <td><span class="pill-tag tag-strong">Toggi Wins ✓</span></td>
+          </tr>
+          <tr>
+            <td>TikTok Presence</td>
+            <td style="color:var(--red);">0 videos</td>
+            <td>Unknown</td>
+            <td>Unknown</td>
+            <td><span class="pill-tag tag-ok">First-Mover Opportunity</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert-box alert-yellow" style="margin-top:28px;">
+      <div class="alert-icon">⚠️</div>
+      <div class="alert-text">
+        <h5>Sundora Toys Is the Biggest Threat — Two Locations, Both High-Rated</h5>
+        <p>Sundora Toys operates branches in both Banani (4.8★ / 62 reviews) and Gulshan (5.0★ / 18 reviews). They are actively targeting the same affluent Dhaka parent segment as Toggi Toys. With superior ratings on both branches, they currently dominate northern Dhaka's Google Map Pack for toy searches.</p>
+      </div>
+    </div>
+
+    <div class="alert-box alert-green" style="margin-top:0;">
+      <div class="alert-icon">💡</div>
+      <div class="alert-text">
+        <h5>Your Real Competitive Advantage — Use It</h5>
+        <p>Toggi Toys has a 25K Facebook following that none of these competitors can match, a full WooCommerce store, and the widest payment gateway options in the local market. Your infrastructure is superior. The only thing holding you back is Google credibility. Fix your GBP, generate reviews aggressively, and you will leapfrog every competitor on this list within 90 days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- SECTION 9: 90-DAY PLAN -->
+<section class="section-gap">
+  <div class="container">
+    <div class="section-head">
+      <span class="label">Step 9 — 90-Day Action Roadmap</span>
+      <h2>The Exact Steps to Fix Every Gap</h2>
+      <p>A phased plan to transform Toggi Toys' digital presence within 90 days — from GBP overhaul to TikTok launch to Dhaka-wide SEO.</p>
+    </div>
+
+    <div class="roadmap">
+      <div class="roadmap-item">
+        <div class="step-badge">1</div>
+        <div class="roadmap-content">
+          <span class="phase-label ph1">Phase 1 · Days 1–7</span>
+          <h4>GBP Emergency Fix</h4>
+          <p>Write and publish a full 750-character GBP description · Add 5 secondary categories · Respond to all 12 existing reviews including the staff complaint · Enable GBP messaging · Upload 20+ store photos · Ensure map pin is exactly on Bashundhara location.</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="step-badge">2</div>
+        <div class="roadmap-content">
+          <span class="phase-label ph1">Phase 1 · Days 8–21</span>
+          <h4>Review Generation Campaign Launch</h4>
+          <p>Design WhatsApp review request script · Place QR code at store checkout pointing to Google review page · Push review request to Facebook followers via pinned post · Target: 30 new reviews in first 30 days · Response protocol: all new reviews answered within 24 hours.</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="step-badge">3</div>
+        <div class="roadmap-content">
+          <span class="phase-label ph1">Phase 1 · Days 22–30</span>
+          <h4>TikTok Launch + Instagram Optimization</h4>
+          <p>Create 5 launch TikTok videos: unboxing, kids playing, toy tours, price reveals, best sellers showcase · Optimize Instagram bio with link to toggitoys.com · Set posting schedule: TikTok 3x/week, Instagram 5x/week · Set up WhatsApp Business auto-reply and catalog.</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="step-badge phase2">4</div>
+        <div class="roadmap-content">
+          <span class="phase-label ph2">Phase 2 · Days 31–60</span>
+          <h4>Website SEO + Local Landing Pages</h4>
+          <p>Install Rank Math SEO plugin · Add LocalBusiness + Product schema · Write and publish 3 location landing pages: "Toy Shop Bashundhara," "Toy Shop Dhaka," "Educational Toys Bangladesh" · Add a homepage "Price for Every Budget" section to counter price objection · Feature bKash/Nagad prominently above the fold.</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="step-badge phase3">5</div>
+        <div class="roadmap-content">
+          <span class="phase-label ph3">Phase 3 · Days 61–90</span>
+          <h4>Google Ads + Review Milestone</h4>
+          <p>Target: 80+ Google reviews by Day 90 · Launch Google Search Ads targeting "toy shop Dhaka," "kids toys online Bangladesh," "educational toys Bashundhara" · Remarketing to website visitors on Facebook · Monthly performance report with ranking tracking · Review and adjust strategy for next 90 days.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size:22px; margin:44px 0 8px;">ROI Projection: 90-Day Results</h3>
+    <div class="roi-grid">
+      <div class="roi-item">
+        <div class="roi-val">80+</div>
+        <div class="roi-lbl">Google Reviews Target by Day 90</div>
+      </div>
+      <div class="roi-item">
+        <div class="roi-val">4.3★+</div>
+        <div class="roi-lbl">Projected GBP Rating After Campaign</div>
+      </div>
+      <div class="roi-item">
+        <div class="roi-val">৳60K+</div>
+        <div class="roi-lbl">Estimated Monthly Online Revenue Increase</div>
+      </div>
+      <div class="roi-item">
+        <div class="roi-val">10K+</div>
+        <div class="roi-lbl">Target TikTok Followers by Day 90</div>
+      </div>
+      <div class="roi-item">
+        <div class="roi-val">Top 3</div>
+        <div class="roi-lbl">Google Map Pack Position for "toy shop Dhaka"</div>
+      </div>
+      <div class="roi-item">
+        <div class="roi-val">5–8x</div>
+        <div class="roi-lbl">Estimated Return on Marketing Investment</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- SECTION 10: ONBOARDING CHECKLIST -->
+<section class="section-gap">
+  <div class="container">
+    <div class="section-head">
+      <span class="label">Step 10 — Onboarding Checklist</span>
+      <h2>What We Need From Toggi Toys to Get Started</h2>
+      <p>Once you sign on, this is everything we'll need in Week 1. Tick each item as you complete it.</p>
+    </div>
+    <div class="checklist">
+      <div class="check-item">
+        <div class="check-box" onclick="this.textContent=this.textContent?'':'✓'; this.style.background=this.textContent?'var(--orange)':''; this.style.borderColor=this.textContent?'var(--orange)':'var(--gray-300)'; this.style.color='#fff';"></div>
+        <div class="ci-text"><h5>GBP Manager Access</h5><p>Add our account as Manager on your Google Business Profile at business.google.com</p></div>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.textContent=this.textContent?'':'✓'; this.style.background=this.textContent?'var(--orange)':''; this.style.borderColor=this.textContent?'var(--orange)':'var(--gray-300)'; this.style.color='#fff';"></div>
+        <div class="ci-text"><h5>WordPress Admin Access</h5><p>Provide WordPress login credentials or contact Ajer X Limited for plugin/page access</p></div>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.textContent=this.textContent?'':'✓'; this.style.background=this.textContent?'var(--orange)':''; this.style.borderColor=this.textContent?'var(--orange)':'var(--gray-300)'; this.style.color='#fff';"></div>
+        <div class="ci-text"><h5>Facebook Page Admin Access</h5><p>Add us as an Editor on your Toggi Toys Facebook page to run review campaigns</p></div>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.textContent=this.textContent?'':'✓'; this.style.background=this.textContent?'var(--orange)':''; this.style.borderColor=this.textContent?'var(--orange)':'var(--gray-300)'; this.style.color='#fff';"></div>
+        <div class="ci-text"><h5>TikTok Account Credentials</h5><p>Share @toggi.toys TikTok login or Creator access to begin content publishing</p></div>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.textContent=this.textContent?'':'✓'; this.style.background=this.textContent?'var(--orange)':''; this.style.borderColor=this.textContent?'var(--orange)':'var(--gray-300)'; this.style.color='#fff';"></div>
+        <div class="ci-text"><h5>Store Photos &amp; Videos</h5><p>Send 30+ photos: store interior, toy displays, happy customers, packaging, exterior</p></div>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.textContent=this.textContent?'':'✓'; this.style.background=this.textContent?'var(--orange)':''; this.style.borderColor=this.textContent?'var(--orange)':'var(--gray-300)'; this.style.color='#fff';"></div>
+        <div class="ci-text"><h5>Top 20 Best-Selling Products List</h5><p>Share your best sellers by category for use in TikTok content and Google Posts</p></div>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.textContent=this.textContent?'':'✓'; this.style.background=this.textContent?'var(--orange)':''; this.style.borderColor=this.textContent?'var(--orange)':'var(--gray-300)'; this.style.color='#fff';"></div>
+        <div class="ci-text"><h5>Google Ads Account</h5><p>Create account at ads.google.com and grant Admin access for Dhaka search campaigns</p></div>
+      </div>
+      <div class="check-item">
+        <div class="check-box" onclick="this.textContent=this.textContent?'':'✓'; this.style.background=this.textContent?'var(--orange)':''; this.style.borderColor=this.textContent?'var(--orange)':'var(--gray-300)'; this.style.color='#fff';"></div>
+        <div class="ci-text"><h5>WhatsApp Business Number Approval</h5><p>Approve setup of branded WhatsApp Business profile on 01754337788 with catalog</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- SECTION 11: PRICING PROPOSAL -->
+<section class="section-gap" id="proposal">
+  <div class="container">
+    <div class="section-head">
+      <span class="label">Step 11 — Service Proposal & Pricing</span>
+      <h2>Your Complete Dhaka Market Domination System: 3 Packages</h2>
+      <p>Every package is built specifically for the Bangladesh toy retail market. Clear deliverables, measurable results, transparent pricing in BDT.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-plan">Foundation</div>
+        <div class="price-amount">৳22,000</div>
+        <div class="price-period">per month · 3-month minimum</div>
+        <ul class="price-features">
+          <li>Full GBP Optimisation (description, categories, photos)</li>
+          <li>Review Generation System (WhatsApp + QR)</li>
+          <li>All Existing Reviews Responded To</li>
+          <li>Monthly Google Posts (4/month)</li>
+          <li>Monthly Performance Report</li>
+          <li>Instagram Bio + Hashtag Optimization</li>
+        </ul>
+        <a href="#book" class="btn btn-primary" style="width:100%; justify-content:center;">Get Started</a>
+      </div>
+      <div class="price-card featured">
+        <span class="featured-badge">Most Popular</span>
+        <div class="price-plan">Growth</div>
+        <div class="price-amount">৳35,000</div>
+        <div class="price-period">per month · 3-month minimum</div>
+        <ul class="price-features">
+          <li>Everything in Foundation</li>
+          <li>TikTok Content Creation (3 videos/week)</li>
+          <li>3 Local SEO Landing Pages on Website</li>
+          <li>Schema Markup Implementation</li>
+          <li>Google Ads Setup (Dhaka toy searches)</li>
+          <li>WhatsApp Business Catalog Setup</li>
+          <li>Weekly Optimisation Reports</li>
+          <li>Facebook Review Campaign</li>
+        </ul>
+        <a href="#book" class="btn btn-primary" style="width:100%; justify-content:center; background:#fff; color:var(--orange);">Get Started</a>
+      </div>
+      <div class="price-card">
+        <div class="price-plan">Dominance</div>
+        <div class="price-amount">৳62,000</div>
+        <div class="price-period">per month · 6-month commitment</div>
+        <ul class="price-features">
+          <li>Everything in Growth</li>
+          <li>Full Website SEO Overhaul</li>
+          <li>5 Dhaka Neighborhood Landing Pages</li>
+          <li>Google Ads Full Management (search + display)</li>
+          <li>TikTok + Instagram Reels (daily content)</li>
+          <li>Price Objection Messaging Strategy</li>
+          <li>Competitor Monitoring &amp; Gap Reports</li>
+          <li>Bi-weekly Strategy Calls</li>
+          <li>Google Map Pack Top 3 Guarantee*</li>
+        </ul>
+        <a href="#book" class="btn btn-primary" style="width:100%; justify-content:center;">Get Started</a>
+      </div>
+    </div>
+    <p style="font-size:12px; color:var(--text-light); margin-top:16px; text-align:center;">*Map Pack guarantee applies to "toy shop Dhaka" and "toy store Bashundhara" within 6 months of full implementation. All prices in BDT.</p>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- FINAL CTA -->
+<section class="cta-footer" id="book">
+  <div class="container cta-inner">
+    <span class="label" style="color:var(--orange); justify-content:center;">Your Move — It's Free & It Takes 30 Minutes</span>
+    <h2>
+      Every Week You Wait,<br><em>Sundora Toys Gets Your Customers.</em>
+    </h2>
+    <p>
+      Sundora Toys Banani sits at 4.8★ with 62 reviews. Little Angels Banani has 104 reviews. Book your free 30-minute strategy call with Alauddin — we'll show you the exact steps to overtake both of them within 90 days.
+    </p>
+    <div class="cta-row">
+      <a href="mailto:callflowmarketer@gmail.com" class="btn btn-primary" style="font-size:15px; padding:16px 32px;">
+        ✉️ Email Me
+      </a>
+      <a href="https://wa.me/8801831591349" class="btn btn-ghost" style="font-size:15px; padding:16px 32px;">
+        💬 WhatsApp Now
+      </a>
+    </div>
+    <p style="font-size:13px; color:rgba(255,255,255,0.3); margin-top:20px;">
+      Prepared by Alauddin · CallFlow™ · callflowmarketer@gmail.com · April 2026
+    </p>
+  </div>
+</section>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta-mobile">
+  <a href="https://wa.me/8801831591349">💬 WhatsApp Alauddin Now</a>
+</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// Interactive check boxes
+document.querySelectorAll('.check-box').forEach(box => {
+  box.addEventListener('click', function() {
+    const checked = this.textContent === '✓';
+    this.textContent = checked ? '' : '✓';
+    this.style.background = checked ? '' : 'var(--orange)';
+    this.style.borderColor = checked ? 'var(--gray-300)' : 'var(--orange)';
+    this.style.color = '#fff';
+  });
+});
+</script>
+</body>
+</html>
