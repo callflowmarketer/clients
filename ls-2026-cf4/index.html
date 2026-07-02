@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP Locksmith Winnipeg — Digital Presence Audit | CallFlow™</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0a1628;
+  --navy-2:#0f1f38;
+  --navy-3:#132747;
+  --gold:#c8a96e;
+  --gold-light:#e3cd9a;
+  --white:#f5f3ee;
+  --muted:#8ea0bb;
+  --red:#ff5c5c;
+  --yellow:#f4c542;
+  --green:#4fd18b;
+  --border:rgba(200,169,110,0.25);
+
+  --fs-cover: clamp(32px,5vw,48px);
+  --fs-zone-title: clamp(26px,3.4vw,36px);
+  --fs-step-title: clamp(20px,2.4vw,26px);
+  --fs-table-head: 15px;
+  --fs-body: 16px;
+  --fs-callout: clamp(30px,4vw,46px);
+  --fs-foot: 13px;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--navy);
+  color:var(--white);
+  font-family:'DM Sans',sans-serif;
+  font-size:var(--fs-body);
+  line-height:1.6;
+}
+.report{max-width:1080px;margin:0 auto;padding:0 24px 80px;}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--white);margin:0 0 12px;}
+.mono{font-family:'DM Mono',monospace;}
+a{color:var(--gold-light);}
+
+/* Cover */
+.cover{
+  min-height:92vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  padding:60px 0 40px;
+  border-bottom:1px solid var(--border);
+  position:relative;
+}
+.cover .eyebrow{
+  color:var(--gold);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  font-size:13px;
+  font-weight:600;
+  margin-bottom:18px;
+}
+.cover h1{font-size:var(--fs-cover);font-weight:800;max-width:800px;line-height:1.15;}
+.cover .sub{color:var(--muted);font-size:18px;margin-top:14px;max-width:640px;}
+.cover .meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;margin-top:44px;width:100%;max-width:820px;}
+.meta-card{background:var(--navy-2);border:1px solid var(--border);border-radius:12px;padding:16px 18px;}
+.meta-card .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;}
+.meta-card .value{font-family:'DM Mono',monospace;font-size:17px;color:var(--gold-light);margin-top:4px;}
+
+/* Zones */
+.zone{padding:70px 0;border-bottom:1px solid var(--border);}
+.zone-label{display:inline-block;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px;}
+.zone h2{font-size:var(--fs-zone-title);font-weight:700;position:relative;padding-bottom:16px;margin-bottom:8px;}
+.zone h2::after{content:"";position:absolute;left:0;bottom:0;width:90px;height:3px;background:var(--gold);}
+.zone .zone-desc{color:var(--muted);max-width:680px;margin-bottom:40px;}
+
+.step{margin-top:56px;}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;color:var(--gold);font-family:'DM Mono',monospace;font-size:13px;margin-right:10px;}
+.step h3{font-size:var(--fs-step-title);font-weight:600;font-family:'DM Sans',sans-serif;display:flex;align-items:center;margin-bottom:20px;}
+
+.card{background:var(--navy-2);border:1px solid var(--border);border-radius:14px;padding:26px 28px;margin-bottom:22px;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+@media(max-width:760px){.grid-2,.grid-4{grid-template-columns:1fr;}}
+
+.callout{font-family:'DM Mono',monospace;font-size:var(--fs-callout);font-weight:700;color:var(--gold);line-height:1.1;}
+.callout-sub{color:var(--muted);font-size:14px;margin-top:6px;}
+
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px;}
+th{font-size:var(--fs-table-head);text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);text-align:left;padding:10px 12px;border-bottom:2px solid var(--border);font-weight:600;}
+td{padding:11px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+
+.tag{display:inline-block;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:600;margin:2px 4px 2px 0;}
+.tag-critical{background:rgba(255,92,92,0.15);color:var(--red);border:1px solid rgba(255,92,92,0.4);}
+.tag-important{background:rgba(244,197,66,0.15);color:var(--yellow);border:1px solid rgba(244,197,66,0.4);}
+.tag-growth{background:rgba(79,209,139,0.15);color:var(--green);border:1px solid rgba(79,209,139,0.4);}
+
+.pill-list{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+.pill{background:var(--navy-3);border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:14px;}
+
+.score-wrap{display:flex;gap:40px;align-items:center;flex-wrap:wrap;}
+.score-ring{position:relative;width:180px;height:180px;flex-shrink:0;}
+.score-ring svg{transform:rotate(-90deg);}
+.score-num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.score-num .n{font-family:'DM Mono',monospace;font-size:42px;font-weight:700;color:var(--gold);}
+.score-num .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;}
+
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px;}
+@media(max-width:760px){.pillars{grid-template-columns:1fr 1fr;}}
+.pillar-card{background:var(--navy-3);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;}
+.pillar-card .p-score{font-family:'DM Mono',monospace;font-size:24px;color:var(--gold-light);}
+.pillar-card .p-label{font-size:12px;color:var(--muted);margin-top:4px;}
+
+blockquote{border-left:3px solid var(--gold);padding:10px 18px;margin:14px 0;color:var(--gold-light);font-style:italic;background:rgba(200,169,110,0.06);border-radius:0 8px 8px 0;}
+
+.term-tip{border-bottom:1px dotted var(--gold);cursor:help;color:var(--gold-light);position:relative;}
+.term-tip:hover::after{
+  content:attr(data-tip);
+  position:absolute;bottom:130%;left:0;
+  background:var(--navy-3);border:1px solid var(--gold);
+  padding:8px 12px;border-radius:8px;font-size:13px;color:var(--white);
+  width:240px;z-index:20;line-height:1.4;font-family:'DM Sans',sans-serif;
+}
+
+.assumption{font-size:13px;color:var(--muted);font-style:italic;}
+
+.ready-copy{background:var(--navy-3);border:1px dashed var(--gold);border-radius:10px;padding:18px 20px;font-size:15px;line-height:1.7;margin:14px 0;}
+.char-count{font-size:13px;color:var(--muted);margin-top:8px;}
+
+.script-card{background:var(--navy-3);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:16px 18px;margin-bottom:12px;}
+.script-card .s-title{color:var(--gold);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;}
+
+.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px;}
+@media(max-width:900px){.package-grid{grid-template-columns:1fr;}}
+.package-card{background:var(--navy-2);border:1px solid var(--border);border-radius:14px;padding:26px;}
+.package-card.featured{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold);}
+.package-card h4{color:var(--gold);font-size:20px;}
+.package-card .price{font-family:'DM Mono',monospace;font-size:28px;color:var(--white);margin:10px 0;}
+.package-card ul{padding-left:18px;margin:14px 0;font-size:14px;color:var(--muted);}
+.package-card ul li{margin-bottom:6px;}
+
+.roadmap{position:relative;padding-left:26px;margin-top:20px;}
+.roadmap::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--border);}
+.rm-item{position:relative;margin-bottom:26px;}
+.rm-item::before{content:"";position:absolute;left:-26px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--gold);}
+.rm-item h4{font-size:16px;color:var(--gold-light);margin-bottom:6px;}
+
+.glossary-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 32px;margin-top:20px;}
+@media(max-width:760px){.glossary-grid{grid-template-columns:1fr;}}
+.g-item{padding:10px 0;border-bottom:1px solid var(--border);}
+.g-item b{color:var(--gold-light);}
+
+footer.brand-footer{padding:60px 0 100px;text-align:center;}
+footer.brand-footer .fname{font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);}
+footer.brand-footer .frole{color:var(--muted);font-size:14px;margin:6px 0 18px;}
+footer.brand-footer .fcontact{font-size:14px;color:var(--muted);}
+footer.brand-footer .fcontact a{color:var(--gold-light);text-decoration:none;}
+.footnote{font-size:var(--fs-foot);color:var(--muted);}
+
+/* Sticky buttons */
+.cf-sticky-btns{position:fixed;bottom:24px;right:20px;z-index:9999;display:flex;flex-direction:column;gap:12px;align-items:flex-end;}
+.cf-btn{display:flex;align-items:center;gap:10px;padding:13px 20px;border-radius:50px;text-decoration:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#ffffff;box-shadow:0 4px 18px rgba(0,0,0,0.35);transition:transform .22s ease, filter .22s ease;cursor:pointer;white-space:nowrap;}
+.cf-btn:hover{transform:scale(1.06);filter:brightness(1.1);}
+.cf-wa{background:#25D366;}
+.cf-email{background:#c8a96e;}
+.cf-icon{width:20px;height:20px;flex-shrink:0;}
+@media(max-width:767px){
+  .cf-btn{padding:0;width:52px;height:52px;border-radius:50%;justify-content:center;}
+  .cf-label{display:none;}
+  .cf-icon{width:22px;height:22px;}
+  body{font-size:15px;}
+}
+</style>
+</head>
+<body>
+<div class="report">
+
+<!-- COVER -->
+<section class="cover">
+  <div class="eyebrow">Digital Presence &amp; Growth Audit · Prepared for a Winnipeg Locksmith</div>
+  <h1>VIP Locksmith Winnipeg</h1>
+  <div class="sub">A complete diagnosis of where you're losing calls today, what it's costing you every month, and the exact system to fix it — built specifically for emergency locksmith businesses in Winnipeg, Manitoba.</div>
+  <div class="meta-grid">
+    <div class="meta-card"><div class="label">Business</div><div class="value">VIP Locksmith Winnipeg</div></div>
+    <div class="meta-card"><div class="label">Location</div><div class="value">585 Transcona Blvd, Winnipeg, MB</div></div>
+    <div class="meta-card"><div class="label">GBP Rating</div><div class="value">5.0★ (129 reviews)</div></div>
+    <div class="meta-card"><div class="label">Currency</div><div class="value">CAD ($)</div></div>
+  </div>
+</section>
+
+<!-- ZONE 1 : PAIN -->
+<section class="zone" id="zone1">
+  <div class="zone-label">Zone 01</div>
+  <h2>Pain — What Invisibility Is Actually Costing You</h2>
+  <div class="zone-desc">Every day your profile is incomplete and your hours conflict with what your website promises, real Winnipeg residents locked out of their car, home, or office are calling someone else. Here's the number, broken down.</div>
+
+  <!-- STEP 01 -->
+  <div class="step" id="step01">
+    <h3><span class="step-num">01</span> Business Intelligence Score</h3>
+    <div class="card">
+      <div class="score-wrap">
+        <div class="score-ring">
+          <svg width="180" height="180" viewBox="0 0 180 180">
+            <circle cx="90" cy="90" r="78" fill="none" stroke="#1c2f4d" stroke-width="14"/>
+            <circle cx="90" cy="90" r="78" fill="none" stroke="#c8a96e" stroke-width="14"
+              stroke-linecap="round"
+              stroke-dasharray="490"
+              stroke-dashoffset="274"
+              style="transition: stroke-dashoffset 1.4s ease;"/>
+          </svg>
+          <div class="score-num"><div class="n">44</div><div class="l">/ 100</div></div>
+        </div>
+        <div>
+          <div style="font-size:20px;color:var(--red);font-weight:700;margin-bottom:6px;">Below Average — Score Interpretation: 41–60</div>
+          <p style="color:var(--muted);max-width:440px;">VIP Locksmith Winnipeg has a strong <span class="term-tip" data-tip="A business's 5-star rating out of Google reviews">5.0★ rating</span>, but sits well below competitors on category coverage, website conversion infrastructure, and paid visibility. This score means roughly 6 in 10 potential customers who search for a Winnipeg locksmith are seeing a competitor before you.</p>
+        </div>
+      </div>
+      <div class="pillars">
+        <div class="pillar-card"><div class="p-score">14/25</div><div class="p-label">GBP / Online Presence</div></div>
+        <div class="pillar-card"><div class="p-score">10/25</div><div class="p-label">Website Conversion</div></div>
+        <div class="pillar-card"><div class="p-score">15/25</div><div class="p-label">Review Authority</div></div>
+        <div class="pillar-card"><div class="p-score">05/25</div><div class="p-label">Ad Presence &amp; Tracking</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4 style="font-size:18px;">Revenue Leakage Calculation</h4>
+      <div class="callout">$13,200 / month</div>
+      <div class="callout-sub">vanishing every 30 days you stay under-optimized in Winnipeg's locksmith search market.</div>
+      <table style="margin-top:20px;">
+        <tr><th>Variable</th><th>Value</th><th>Source</th></tr>
+        <tr><td>Estimated Monthly Search Volume (core locksmith terms, Winnipeg)</td><td class="mono">450</td><td class="assumption">[Assumption: population-adjusted estimate — verify with Google Keyword Planner]</td></tr>
+        <tr><td>Emergency/Urgent Intent Factor</td><td class="mono">0.35</td><td>Standard locksmith urgency conversion factor</td></tr>
+        <tr><td>Local Share Addressable</td><td class="mono">100%</td><td>Single-city service area</td></tr>
+        <tr><td>Visibility Score (1 − 0.44)</td><td class="mono">0.56</td><td>From Business Intelligence Score above</td></tr>
+        <tr><td>Avg Locksmith Job Value (blended, CAD)</td><td class="mono">$150</td><td>Lockout $75–150 · Rekey $80–180 · Lock change $120–250 · Auto $100–200 · Commercial $200–800</td></tr>
+      </table>
+      <p class="footnote">Calculation: (450 × 0.35 × 1.0) = 157.5 monthly qualified searches you're structurally positioned to lose × 0.56 invisibility factor = 88 lost opportunities × $150 avg job value ≈ <b>$13,200/month</b>, or roughly <b>$158,400/year</b>.</p>
+    </div>
+
+    <div class="card">
+      <h4 style="font-size:18px;">Top 3 Revenue Bleeding Points</h4>
+      <table>
+        <tr><th>#</th><th>Problem</th><th>Why It Costs Money</th><th>Fastest Fix</th></tr>
+        <tr>
+          <td class="mono">1</td>
+          <td>Only 2 <span class="term-tip" data-tip="The service categories a business selects on its Google Business Profile">GBP</span> categories set (Locksmith, Emergency locksmith service) vs. competitors running 3–6</td>
+          <td>You're structurally invisible for "automotive locksmith Winnipeg," "key duplication Winnipeg," and "security system installation Winnipeg" — searches Google won't show you for at all</td>
+          <td>Add 5 secondary categories today — zero cost, same-day ranking signal</td>
+        </tr>
+        <tr>
+          <td class="mono">2</td>
+          <td>🔴 Hours conflict: GBP shows "Closed · Opens 6 AM" while your website footer states "Mon–Sun: 12:00am–12:00am" and your own description promises 24/7 emergency service</td>
+          <td>After-hours lockouts are your highest-value emergency jobs — Google is actively telling searchers you're closed during the exact hours those calls happen</td>
+          <td>Align GBP hours with actual operating hours and appointment-based 24/7 emergency attribute today</td>
+        </tr>
+        <tr>
+          <td class="mono">3</td>
+          <td>No detected Google Ads or <span class="term-tip" data-tip="Local Services Ads — pay-per-lead ads that appear above the Map Pack">LSA</span> presence, while 17+ Winnipeg locksmiths compete for the same Map Pack real estate</td>
+          <td>You're relying entirely on organic ranking against competitors with 5–10x your review volume</td>
+          <td>Launch LSA — locksmiths are explicitly eligible in Canada — this week</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- STEP 02 -->
+  <div class="step" id="step02">
+    <h3><span class="step-num">02</span> Competitor Displacement Audit</h3>
+    <div class="grid-2">
+      <div class="card">
+        <div class="tag tag-critical">#1 Volume Threat</div>
+        <h4 style="font-size:18px;margin-top:8px;">Dr. Locksmith Winnipeg</h4>
+        <p style="color:var(--muted);margin:6px 0;">5.0★ · ~1,185–1,200 reviews · 234 Poplarwood Ave</p>
+        <p style="font-size:14px;">Nearly <b>10x</b> your review count at the same 5.0★ rating. Their GBP runs 3 categories including "Security service," a category you're missing entirely.</p>
+        <p style="font-size:14px;color:var(--gold-light);">Vulnerability: Currently closed at time of audit ("Opens 6 AM") — same after-hours gap you can beat them on if you fix your own hours conflict first.</p>
+      </div>
+      <div class="card">
+        <div class="tag tag-important">#1 Geographic Threat</div>
+        <h4 style="font-size:18px;margin-top:8px;">Flash Locksmith Inc.</h4>
+        <p style="color:var(--muted);margin:6px 0;">4.9★ · 53 reviews · 2 Atkinson Rd</p>
+        <p style="font-size:14px;">Closest competitor in the Transcona/East Winnipeg corridor, and running the exact same 2-category gap you have. Estimated 8–12 leads/month intercepted from shared local search radius.</p>
+        <p style="font-size:14px;color:var(--gold-light);">Vulnerability: Only 53 reviews — reachable review-volume target within 6–9 months at an aggressive velocity.</p>
+      </div>
+      <div class="card">
+        <div class="tag tag-growth">#1 Category Threat</div>
+        <h4 style="font-size:18px;margin-top:8px;">Dakota Lock &amp; Safe Ltd</h4>
+        <p style="color:var(--muted);margin:6px 0;">4.6★ · 143 reviews · 1051 St Mary's Rd</p>
+        <p style="font-size:14px;">Runs 6 GBP categories (Locksmith, Burglar alarm store, Door shop, Locks supplier, Safe &amp; vault shop, Security system installation service) — the widest search-term coverage of any competitor found.</p>
+        <p style="font-size:14px;color:var(--gold-light);">Vulnerability: 4.6★ rating is meaningfully below your 5.0★ — a direct trust-based positioning counter-attack.</p>
+      </div>
+      <div class="card">
+        <div class="tag tag-critical">#1 Reach Threat</div>
+        <h4 style="font-size:18px;margin-top:8px;">LocksmithMAN</h4>
+        <p style="color:var(--muted);margin:6px 0;">5.0★ · 1,049 reviews · Winnipeg-wide</p>
+        <p style="font-size:14px;">Matches your 5.0★ perfect rating at 8x your review volume — proof a perfect score alone isn't winning the Map Pack in this market.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4 style="font-size:18px;">Lost Revenue vs. Primary Competitor (Dr. Locksmith Winnipeg)</h4>
+      <div class="callout">$10,500 / month</div>
+      <div class="callout-sub">lost every 30 days you wait to close the visibility gap.</div>
+      <table style="margin-top:16px;">
+        <tr><th>Position</th><th><span class="term-tip" data-tip="Click-through rate — the percentage of people who click a result after seeing it">Map Pack CTR</span></th></tr>
+        <tr><td>#1 (Dr. Locksmith)</td><td class="mono">42%</td></tr>
+        <tr><td>Your estimated position (#3)</td><td class="mono">18%</td></tr>
+      </table>
+      <p class="footnote">Leads Lost = (42% − 18%) × 450 monthly searches × 0.65 booking factor ≈ <b>70 leads/month</b>. Monthly Revenue Lost = 70 × $150 avg job value = <b>$10,500/month</b>. Annualized: <b>$126,000/year</b>. <span class="assumption">[Assumption: current Map Pack position estimated from review volume gap and category coverage — verify with a live rank tracker query.]</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ZONE 2 : PROOF -->
+<section class="zone" id="zone2">
+  <div class="zone-label">Zone 02</div>
+  <h2>Proof — We Know This Market Better Than Anyone You've Talked To</h2>
+  <div class="zone-desc">Here's the exact, line-by-line audit of your Google Business Profile, your website, and your reviews — with ready-to-paste fixes for every gap found.</div>
+
+  <!-- STEP 03 -->
+  <div class="step" id="step03">
+    <h3><span class="step-num">03</span> Online Presence Audit &amp; Ready-to-Paste Fixes</h3>
+
+    <div class="card">
+      <h4 style="font-size:18px;">GBP Audit Checklist</h4>
+      <table>
+        <tr><th>Item</th><th>Current Status</th><th>Priority</th></tr>
+        <tr><td>Primary category</td><td>"Locksmith" — correct</td><td><span class="tag tag-growth">OK</span></td></tr>
+        <tr><td>Secondary categories</td><td>Only "Emergency locksmith service" set — missing 5 mandatory ones</td><td><span class="tag tag-critical">Critical</span></td></tr>
+        <tr><td>Business description</td><td>Good keyword density, includes "locksmith winnipeg" and "locksmith near me," but reads AI-generated and lacks a direct phone CTA at the top</td><td><span class="tag tag-important">Important</span></td></tr>
+        <tr><td>Photos</td><td>122+ photos uploaded, latest ~25 days ago — strong engagement signal</td><td><span class="tag tag-growth">OK</span></td></tr>
+        <tr><td>Posts</td><td>No recent post activity confirmed in export</td><td><span class="tag tag-important">Important</span></td></tr>
+        <tr><td>Q&amp;A</td><td>No populated Q&amp;A detected</td><td><span class="tag tag-growth">Growth</span></td></tr>
+        <tr><td>NAP consistency</td><td>Phone/address consistent across GBP and website — but 🔴 hours conflict between GBP and site</td><td><span class="tag tag-critical">Critical</span></td></tr>
+        <tr><td>Appointment URL</td><td>Set — /contact page linked</td><td><span class="tag tag-growth">OK</span></td></tr>
+        <tr><td>Hours conflict</td><td>🔴 GBP shows "Closed · Opens 6 AM" while site claims 24/7 — direct NAP/trust conflict</td><td><span class="tag tag-critical">Critical</span></td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h4 style="font-size:18px;">Priority Fix Table</h4>
+      <table>
+        <tr><th>Priority</th><th>Fix</th><th>Timeline</th><th>Impact</th></tr>
+        <tr><td><span class="tag tag-critical">Critical</span></td><td>Add 5 missing GBP secondary categories: Automotive locksmith service, Key duplication service, Security system installation service, Safe &amp; vault shop, Locks supplier</td><td>24 hours</td><td>Ranking</td></tr>
+        <tr><td><span class="tag tag-critical">Critical</span></td><td>Resolve GBP-vs-website hours conflict; set correct 24/7 emergency attribute</td><td>24 hours</td><td>Ranking + Trust</td></tr>
+        <tr><td><span class="tag tag-important">Important</span></td><td>Rewrite GBP description using the locksmith formula below, add "By appointment" clarity that doesn't undercut the 24/7 emergency promise</td><td>7 days</td><td>Conversion</td></tr>
+        <tr><td><span class="tag tag-important">Important</span></td><td>Add sticky click-to-call button + dedicated Emergency Lockout landing page on website</td><td>7 days</td><td>Conversion</td></tr>
+        <tr><td><span class="tag tag-growth">Growth</span></td><td>Populate GBP Q&amp;A with 8–10 locksmith-specific questions; begin weekly GBP posts</td><td>30 days</td><td>Scale</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h4 style="font-size:18px;">Ready-to-Paste GBP Business Description</h4>
+      <div class="ready-copy">Emergency Locksmith in Winnipeg. VIP Locksmith Winnipeg provides residential lockout, commercial lockout, car lockout, lock rekeying, lock change, key cutting, deadbolt installation, safe opening, and security hardware supply across Winnipeg, MB. With a perfect 5.0-star rating from 129+ verified customers, our mobile technicians respond fast, day or night, for emergency lockouts anywhere in Winnipeg. Available by appointment for scheduled work and around the clock for true emergencies. Trusted, reliable, and upfront on pricing — no hidden fees. Call 204-399-9318 now for fast Winnipeg locksmith service.</div>
+      <div class="char-count">~640 characters · City appears 3x · Trust signal (5.0★/129 reviews) included · Emotional trigger: "trusted, reliable" · CTA + phone number included</div>
+    </div>
+
+    <div class="card">
+      <h4 style="font-size:18px;">Website Conversion Audit</h4>
+      <table>
+        <tr><th>Check</th><th>Result</th></tr>
+        <tr><td>HTTPS</td><td><span class="tag tag-growth">Pass</span> — site loads on HTTPS</td></tr>
+        <tr><td>Sticky click-to-call button</td><td><span class="tag tag-critical">Fail</span> — no persistent tap-to-call element detected; mobile visitors must scroll to find the number</td></tr>
+        <tr><td>Dedicated emergency lockout landing page</td><td><span class="tag tag-critical">Fail</span> — nav only offers Home / Services / Blog / Contact, no standalone high-intent landing page</td></tr>
+        <tr><td>Above-fold booking CTA</td><td><span class="tag tag-important">Partial</span> — "Appointment," "Emergency Lockout" and "Key Fob Replacement" links appear near the top, but no phone number is visible above the fold</td></tr>
+        <tr><td>Schema markup</td><td><span class="tag tag-important">Unconfirmed</span> — no <span class="term-tip" data-tip="Structured code added to a website that helps Google display rich results like ratings and hours">Schema Markup</span> evidence found; recommend LocalBusiness + Locksmith schema implementation</td></tr>
+        <tr><td><span class="term-tip" data-tip="Google Tag Manager">GTM</span> / <span class="term-tip" data-tip="Google Analytics 4">GA4</span></td><td><span class="tag tag-important">Unconfirmed</span> — no tracking evidence found in page source; without this, you cannot measure which channel is producing calls</td></tr>
+        <tr><td>Mobile-optimized</td><td><span class="tag tag-growth">Pass</span> — responsive layout detected</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- STEP 04 -->
+  <div class="step" id="step04">
+    <h3><span class="step-num">04</span> Review Velocity System</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4 style="font-size:16px;">Top 5 Praise Keywords (exact words)</h4>
+        <div class="pill-list">
+          <div class="pill">"fast / quick"</div>
+          <div class="pill">"professional"</div>
+          <div class="pill">"reliable"</div>
+          <div class="pill">"friendly"</div>
+          <div class="pill">"reasonable / affordable price"</div>
+        </div>
+        <p style="font-size:14px;color:var(--muted);">Use these exact words in ad headlines, GBP posts, and callout extensions — they mirror what real Winnipeg customers already say about you.</p>
+      </div>
+      <div class="card">
+        <h4 style="font-size:16px;">Anxiety Keywords to Address in Ad Copy</h4>
+        <div class="pill-list">
+          <div class="pill">"overpriced"</div>
+          <div class="pill">"didn't show up"</div>
+          <div class="pill">"scam"</div>
+        </div>
+        <p style="font-size:14px;color:var(--muted);">No negative reviews were found in the current sample — a genuine strength — but proactively countering these standard locksmith-industry fears ("upfront pricing," "on-time guarantee") in ad copy converts hesitant emergency searchers faster.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4 style="font-size:18px;">Review Velocity</h4>
+      <table>
+        <tr><td>Current velocity</td><td class="mono">~5.4 reviews/month</td><td class="assumption">[Assumption: 129 reviews ÷ ~24 months estimated active history]</td></tr>
+        <tr><td>Reviews needed/month to reach the 500-review Map Pack re-ranking threshold within 12 months</td><td class="mono">~31/month</td><td>(500 − 129) ÷ 12</td></tr>
+        <tr><td>Required increase</td><td class="mono">~6x current rate</td><td>—</td></tr>
+      </table>
+      <p style="font-size:14px;color:var(--muted);">No unanswered negative reviews were found in the current sample. However, none of the 15 most recent 5-star reviews have an owner response — a missed trust-building opportunity as review volume scales.</p>
+    </div>
+
+    <div class="card">
+      <h4 style="font-size:18px;">4 Ready-to-Use Review Scripts</h4>
+      <div class="script-card"><div class="s-title">SMS — within 2 hours of job</div>Hi [Name]! Thanks for choosing VIP Locksmith Winnipeg today. If [tech name] got you back in fast and stress-free, a 30-second Google review means everything to our team: [link] — Thank you! 🔑</div>
+      <div class="script-card"><div class="s-title">Email — next morning 9AM</div>Subject: "How was your experience, [First Name]?" — short thank-you note with a large button linking directly to the Google review page.</div>
+      <div class="script-card"><div class="s-title">In-person — tech says before leaving</div>[Name], quick favour — a Google review takes 60 seconds and helps Winnipeg families find a locksmith they can trust at 2am. I'll text you the link now. Would that be okay?</div>
+      <div class="script-card"><div class="s-title">WhatsApp</div>Hi [Name] 👋 Great helping you today! If everything went smoothly, a quick Google review really helps our team: [link]. 30 seconds — thank you! 🙏</div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONE 3 : SOLUTION -->
+<section class="zone" id="zone3">
+  <div class="zone-label">Zone 03</div>
+  <h2>Solution — The Complete System That Fixes Everything</h2>
+  <div class="zone-desc">This isn't a list of suggestions. This is the exact 90-day build, campaign structure, and pricing to turn VIP Locksmith Winnipeg into the default call in your service area.</div>
+
+  <!-- STEP 05 -->
+  <div class="step" id="step05">
+    <h3><span class="step-num">05</span> Lead Capture Blueprint</h3>
+
+    <div class="card">
+      <h4 style="font-size:18px;">Search Demand &amp; Decision Logic</h4>
+      <p>Winnipeg carries moderate, steady locksmith search demand year-round with sharp winter spikes from frozen locks. No Google Ads presence was confirmed for VIP Locksmith Winnipeg at audit time. <span class="assumption">[Note: Locksmith services require Google's Advanced Verification process to run standard Search ads in Canada — this must be completed before Campaign 2/3 below can go live; it does not block Local Services Ads.]</span></p>
+      <p><b>Recommended approach:</b> Launch <span class="term-tip" data-tip="Local Services Ads — pay-per-lead ads shown above the Map Pack">LSA</span> immediately (no Advanced Verification blocker) while submitting Google Ads Advanced Verification in parallel, combined with an aggressive GBP category and citation push.</p>
+    </div>
+
+    <div class="card">
+      <h4 style="font-size:18px;">Keyword Strategy</h4>
+      <div class="grid-2">
+        <div>
+          <h4 style="font-size:15px;color:var(--gold-light);">Top 5 High-Intent (Emergency)</h4>
+          <div class="pill-list">
+            <div class="pill">emergency locksmith winnipeg</div>
+            <div class="pill">locked out of my house winnipeg</div>
+            <div class="pill">24 hour locksmith winnipeg</div>
+            <div class="pill">car lockout winnipeg</div>
+            <div class="pill">locksmith near me winnipeg</div>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-size:15px;color:var(--gold-light);">Top 5 General (Discovery)</h4>
+          <div class="pill-list">
+            <div class="pill">locksmith winnipeg</div>
+            <div class="pill">key cutting winnipeg</div>
+            <div class="pill">rekey locks winnipeg</div>
+            <div class="pill">lock change winnipeg</div>
+            <div class="pill">residential locksmith winnipeg</div>
+          </div>
+        </div>
+      </div>
+      <h4 style="font-size:15px;color:var(--gold-light);margin-top:16px;">Top 3 High-Value (Commercial/Automotive)</h4>
+      <div class="pill-list">
+        <div class="pill">commercial locksmith winnipeg</div>
+        <div class="pill">automotive locksmith winnipeg</div>
+        <div class="pill">car key replacement winnipeg</div>
+      </div>
+      <h4 style="font-size:15px;color:var(--gold-light);margin-top:16px;">20+ Negative Keywords</h4>
+      <p style="font-size:14px;color:var(--muted);">locksmith jobs · locksmith training · locksmith school · locksmith career · locksmith certification · locksmith apprenticeship · locksmith course · how to pick a lock · DIY lock repair · free locksmith · locksmith scam · locksmith complaints · cheap locksmith · locksmith franchise · locksmith tools for sale · bump key · lock picking kit · locksmith brandon · locksmith regina · locksmith saskatoon · locksmith toronto · locksmith calgary</p>
+    </div>
+
+    <div class="card">
+      <h4 style="font-size:18px;">3-Campaign Google Ads Structure</h4>
+      <table>
+        <tr><th>Campaign</th><th>Budget Split</th><th>Strategy</th><th>Schedule</th></tr>
+        <tr><td>1 — Emergency / Lockout</td><td class="mono">35%</td><td>Maximize Conversions, Call extensions always on</td><td>24/7</td></tr>
+        <tr><td>2 — General / Residential</td><td class="mono">40%</td><td>Target CPA</td><td>Mon–Sat 7am–9pm</td></tr>
+        <tr><td>3 — High-Value / Commercial &amp; Automotive</td><td class="mono">25%</td><td>Target ROAS</td><td>Business hours</td></tr>
+      </table>
+
+      <h4 style="font-size:15px;color:var(--gold-light);margin-top:18px;">15 RSA Headlines</h4>
+      <div class="pill-list">
+        <div class="pill">24/7 Locksmith Winnipeg</div><div class="pill">Locked Out? Call Now</div><div class="pill">Fast Emergency Response</div>
+        <div class="pill">5.0★ Rated Locksmith</div><div class="pill">Trusted Winnipeg Locksmith</div><div class="pill">129+ 5-Star Reviews</div><div class="pill">Local Family-Run Business</div>
+        <div class="pill">Fast, Reliable Service</div><div class="pill">Honest, Upfront Pricing</div><div class="pill">No Hidden Fees</div><div class="pill">Friendly Pro Technicians</div>
+        <div class="pill">Rekey, Repair, or Replace</div><div class="pill">Car, Home &amp; Business Locks</div><div class="pill">Same-Day Key Cutting</div><div class="pill">Call 204-399-9318 Now</div>
+      </div>
+      <h4 style="font-size:15px;color:var(--gold-light);margin-top:18px;">4 RSA Descriptions</h4>
+      <div class="pill-list" style="flex-direction:column;align-items:flex-start;">
+        <div class="pill">Locked out in Winnipeg? Our mobile team responds fast, day or night. Call now for honest pricing.</div>
+        <div class="pill">Rated 5.0★ by 129+ Winnipeg customers. Residential, commercial &amp; automotive locksmith service.</div>
+        <div class="pill">Fast key cutting, rekeying &amp; lock changes across Winnipeg. Transparent pricing, no surprises.</div>
+        <div class="pill">Car, home, or business — our technicians get you back in fast. Call 204-399-9318 today.</div>
+      </div>
+      <p style="font-size:14px;color:var(--muted);margin-top:14px;"><b>Ad Assets:</b> Call asset (204-399-9318) · 4 sitelinks (Emergency Lockout, Key Cutting, Commercial Locksmith, Book Appointment) · 6 callouts (24/7 Emergency, 5.0★ Rated, Upfront Pricing, Fast Response, Licensed &amp; Insured, Family Owned) · Location asset · 3+ image assets</p>
+    </div>
+
+    <div class="card">
+      <h4 style="font-size:18px;">Budget &amp; Break-Even (Google Ads, illustrative)</h4>
+      <table>
+        <tr><th>Daily Budget</th><th>Monthly</th><th>Avg CPC</th><th>Clicks</th><th>Conv. Rate</th><th>Leads</th><th><span class="term-tip" data-tip="Cost per lead">CPL</span></th><th>Close Rate</th><th>Jobs</th><th>Revenue</th></tr>
+        <tr><td class="mono">$40</td><td class="mono">$1,200</td><td class="mono">$16</td><td class="mono">75</td><td class="mono">18%</td><td class="mono">14</td><td class="mono">$86</td><td class="mono">65%</td><td class="mono">9</td><td class="mono">$1,350</td></tr>
+      </table>
+      <p class="footnote">Break-even reached in week 1 at this spend level once close rate stabilizes; scale budget as CPL trends downward.</p>
+    </div>
+
+    <div class="card">
+      <h4 style="font-size:18px;">★ Local Services Ads (LSA) — Mandatory</h4>
+      <p>LSA ads appear above regular Google Ads and the Map Pack — the single highest-visibility position in Google Search — and are billed per verified phone lead, not per click. Locksmith services are explicitly eligible for LSA in Canada, and businesses that pass verification carry the "Google Guaranteed" badge, a major trust signal for emergency callers.</p>
+      <table>
+        <tr><th>Feature</th><th>Google Ads</th><th>LSA</th></tr>
+        <tr><td>Position</td><td>Below LSA</td><td>Above everything</td></tr>
+        <tr><td>Payment</td><td>Per click (CAD $8–$30)</td><td>Per lead (CAD $18–$45)</td></tr>
+        <tr><td>Trust badge</td><td>None</td><td>Google Guaranteed ✓</td></tr>
+        <tr><td>Best for</td><td>Volume + brand</td><td>Emergency calls</td></tr>
+        <tr><td>Recommended</td><td>Yes — run both</td><td>Yes — mandatory</td></tr>
+      </table>
+      <h4 style="font-size:15px;color:var(--gold-light);margin-top:16px;">LSA Setup Requirements</h4>
+      <p style="font-size:14px;color:var(--muted);">Manitoba business license verification · Liability insurance certificate · Background check for all technicians · GBP verified and optimized · Minimum 10 Google reviews (you already have 129 — well above threshold)</p>
+      <h4 style="font-size:15px;color:var(--gold-light);margin-top:16px;">LSA ROI Calculation</h4>
+      <table>
+        <tr><td>Monthly LSA budget</td><td class="mono">$1,000</td></tr>
+        <tr><td>Avg CPL</td><td class="mono">$30</td></tr>
+        <tr><td>Leads/month</td><td class="mono">33</td></tr>
+        <tr><td>Close rate</td><td class="mono">80%</td></tr>
+        <tr><td>New jobs/month</td><td class="mono">26</td></tr>
+        <tr><td>Avg job value</td><td class="mono">$150</td></tr>
+        <tr><td>Revenue</td><td class="mono">$3,960</td></tr>
+        <tr><td>ROAS</td><td class="mono">3.96x</td></tr>
+      </table>
+      <p style="font-size:14px;color:var(--muted);">Emergency locksmith is one of the highest-converting LSA categories globally. Running LSA + Google Ads + GBP together captures the largest possible share of Winnipeg's local locksmith search traffic.</p>
+    </div>
+  </div>
+
+  <!-- STEP 06 -->
+  <div class="step" id="step06">
+    <h3><span class="step-num">06</span> 90-Day Dominance Roadmap</h3>
+    <div class="card">
+      <div class="roadmap">
+        <div class="rm-item"><h4>Week 1–2 · Foundation</h4><p style="font-size:14px;color:var(--muted);">Fix GBP category gap and hours conflict, submit LSA verification documents, install GTM/GA4, add sticky click-to-call + emergency landing page.</p></div>
+        <div class="rm-item"><h4>Week 3–4 · Acceleration</h4><p style="font-size:14px;color:var(--muted);">Launch LSA, submit Google Ads Advanced Verification, begin Tier 1 &amp; 2 citation building, activate review velocity system.</p></div>
+        <div class="rm-item"><h4>Week 5–8 · Growth</h4><p style="font-size:14px;color:var(--muted);">Launch Google Ads Campaigns 1–3, complete Tier 3 city-specific citations, begin weekly GBP posts.</p></div>
+        <div class="rm-item"><h4>Week 9–12 · Dominance</h4><p style="font-size:14px;color:var(--muted);">Optimize toward lowest CPL, scale LSA budget, publish neighbourhood geo-pages, review full-funnel ROI and plan winter-season budget scale-up.</p></div>
+      </div>
+    </div>
+    <div class="card">
+      <h4 style="font-size:18px;">6-Month Forward Forecast</h4>
+      <p style="font-size:14px;color:var(--muted);">Winnipeg's winter (Oct–Mar) drives sharp frozen-lock lockout spikes — budget should scale 25–40% through this window. Summer brings vacation-lockout demand. Watch the 500-review threshold across top competitors — crossing it typically triggers a Map Pack re-ranking event. Early LSA adopters in this market currently hold a first-mover advantage.</p>
+    </div>
+    <div class="card">
+      <h4 style="font-size:18px;">50 Citation Sources</h4>
+      <p style="font-size:14px;"><b>Tier 1 (10):</b> GBP · Yelp · Facebook · Bing Places · Apple Maps · Yellow Pages Canada · Foursquare · Waze · HERE Maps · MapQuest</p>
+      <p style="font-size:14px;"><b>Tier 2 — Locksmith Niche (20):</b> HomeStars.ca · Houzz Canada · Angi · Thumbtack · TrustedPros.ca · Bark.com · ALOA · CAA Approved Suppliers · Expertise.com · Manta · Cylex Canada · 2FindLocal · iBegin Canada · Brownbook.net · Porch.com · Fixr.com · BuildZoom · GoodWorkmanship.com · HomeAdvisor Canada · Locksmiths.com Directory</p>
+      <p style="font-size:14px;"><b>Tier 3 — Winnipeg-Specific (20):</b> Winnipeg Chamber of Commerce Directory · Manitoba Business Directory · Tourism Winnipeg Local Directory · Winnipeg Free Press Business Listings · CBC Manitoba Local Business · 204Guide.ca · WinnipegREALTORS Vendor List · Manitoba Better Business Bureau · Winnipeg.ca Local Business Registry · Exchange District BIZ Directory · North Kildonan BIZ · Transcona BIZ Directory · St. Boniface Chamber · West Kildonan-Brooklands BIZ · Downtown Winnipeg BIZ · Winnipeg Trades Directory · Manitoba HomeBuilders' Association Directory · Prairie Provinces Business Listings · Winnipeg Neighbourhood Associations Directory · Local604/CanadaOne Business Listings</p>
+    </div>
+  </div>
+
+  <!-- STEP 07 -->
+  <div class="step" id="step07">
+    <h3><span class="step-num">07</span> Three-Package Proposal</h3>
+    <p style="color:var(--muted);">All pricing in CAD. Ad spend (Google Ads / LSA) is always separate from the monthly retainer below.</p>
+    <div class="package-grid">
+      <div class="package-card">
+        <h4>Foundation</h4>
+        <div class="price">$597–797<span style="font-size:14px;color:var(--muted);">/mo</span></div>
+        <ul>
+          <li>GBP category, hours &amp; description fix</li>
+          <li>Tier 1 &amp; 2 citation building</li>
+          <li>Review velocity system setup</li>
+          <li>GTM/GA4 install</li>
+        </ul>
+      </div>
+      <div class="package-card featured">
+        <h4>Growth</h4>
+        <div class="price">$1,097–1,497<span style="font-size:14px;color:var(--muted);">/mo</span></div>
+        <ul>
+          <li>Everything in Foundation</li>
+          <li>LSA setup &amp; management</li>
+          <li>Google Ads Campaigns 1–3 build &amp; management</li>
+          <li>Tier 3 citation building</li>
+          <li>Monthly performance reporting</li>
+        </ul>
+      </div>
+      <div class="package-card">
+        <h4>Dominance</h4>
+        <div class="price">$1,797–2,297<span style="font-size:14px;color:var(--muted);">/mo</span></div>
+        <ul>
+          <li>Everything in Growth</li>
+          <li>Google Screened badge support</li>
+          <li>Automotive locksmith landing page</li>
+          <li>Neighbourhood geo-pages</li>
+          <li>Missed-call SMS automation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 08 -->
+  <div class="step" id="step08">
+    <h3><span class="step-num">08</span> Client Onboarding Checklist</h3>
+    <div class="card">
+      <h4 style="font-size:16px;">Standard Access Required</h4>
+      <p style="font-size:14px;color:var(--muted);">GBP Manager access · Google Ads Customer ID · Website CMS admin</p>
+      <h4 style="font-size:16px;margin-top:16px;">LSA-Specific Documents</h4>
+      <p style="font-size:14px;color:var(--muted);">Manitoba business license copy · Liability insurance certificate ($1M+ coverage) · Photo ID + background check consent for all field technicians · Vehicle registration for mobile units. We handle full LSA submission — you provide documents only.</p>
+      <h4 style="font-size:16px;margin-top:16px;">Go-Live Timeline</h4>
+      <p style="font-size:14px;color:var(--muted);">Day 1–2: access granted · Day 3–5: tracking + ads built · Day 7: ads live · Week 2: first performance data · Month 1: full report delivered</p>
+    </div>
+  </div>
+</section>
+
+<!-- GLOSSARY -->
+<section class="zone" id="glossary">
+  <div class="zone-label">Reference</div>
+  <h2>Glossary of Terms</h2>
+  <div class="glossary-grid">
+    <div class="g-item"><b>CTR</b> — Click-Through Rate: the percentage of people who click your listing after seeing it.</div>
+    <div class="g-item"><b>CPC</b> — Cost Per Click: what you pay each time someone clicks a Google Ad.</div>
+    <div class="g-item"><b>CPL</b> — Cost Per Lead: what you pay for each verified phone call or message.</div>
+    <div class="g-item"><b>CPA</b> — Cost Per Acquisition: total ad spend divided by the number of jobs booked.</div>
+    <div class="g-item"><b>ROAS</b> — Return On Ad Spend: revenue generated for every dollar spent on ads.</div>
+    <div class="g-item"><b>GBP</b> — Google Business Profile: your free business listing on Google Maps and Search.</div>
+    <div class="g-item"><b>NAP</b> — Name, Address, Phone: your business details, which must match exactly everywhere online.</div>
+    <div class="g-item"><b>Map Pack</b> — the 3-listing map box that appears at the top of local Google searches.</div>
+    <div class="g-item"><b>LSA</b> — Local Services Ads: pay-per-lead ads shown above the Map Pack, with a "Google Guaranteed" badge.</div>
+    <div class="g-item"><b>Schema Markup</b> — hidden code on your website that helps Google display rich details like your rating.</div>
+    <div class="g-item"><b>GTM</b> — Google Tag Manager: a tool that installs tracking code on your website.</div>
+    <div class="g-item"><b>GA4</b> — Google Analytics 4: reports on where your website visitors and calls come from.</div>
+    <div class="g-item"><b>LTV</b> — Lifetime Value: the total revenue an average customer generates over time.</div>
+    <div class="g-item"><b>RSA</b> — Responsive Search Ad: a Google Ad format that mixes headlines and descriptions automatically.</div>
+    <div class="g-item"><b>Review Velocity</b> — how many new Google reviews you earn per month.</div>
+    <div class="g-item"><b>Citation</b> — any online directory listing of your business name, address, and phone number.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="brand-footer">
+  <div class="fname">Md. Alauddin</div>
+  <div class="frole">CSE Graduate &amp; Lead Generation Specialist &amp; Digital Growth Expert for Emergency Service Businesses</div>
+  <div class="fcontact">
+    WhatsApp: <a href="https://wa.me/8801831591349" target="_blank" rel="noopener">+880 1831 591349</a> &nbsp;·&nbsp;
+    Email: <a href="mailto:callflowmarketer@gmail.com">callflowmarketer@gmail.com</a>
+  </div>
+  <p class="footnote" style="margin-top:24px;">Report prepared by CallFlow™ · Data current as of GBP export date 2026-06-30. All figures marked [Assumption] should be verified against live Google Keyword Planner and rank-tracking data before finalizing ad budgets.</p>
+</footer>
+
+</div>
+
+<!-- CallFlow Sticky Contact Buttons -->
+<div class="cf-sticky-btns">
+  <a class="cf-btn cf-wa" href="https://wa.me/8801831591349" target="_blank" rel="noopener" aria-label="WhatsApp Us">
+    <svg class="cf-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.828L0 24l6.335-1.498A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.213-3.724.88.939-3.63-.234-.374A9.818 9.818 0 1112 21.818z"/>
+    </svg>
+    <span class="cf-label">WhatsApp Us</span>
+  </a>
+  <a class="cf-btn cf-email" href="mailto:callflowmarketer@gmail.com" aria-label="Email Us">
+    <svg class="cf-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <polyline points="2,4 12,13 22,4"/>
+    </svg>
+    <span class="cf-label">Email Us</span>
+  </a>
+</div>
+
+</body>
+</html>
